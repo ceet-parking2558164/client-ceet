@@ -1,4 +1,4 @@
-import {ListItemCard} from "../../types/constans/ListItemCard.ts";
+import {ListItemCard} from '../../types/constans/ListItemCard.ts';
 
 const itemsCardImage:ListItemCard[] = [
     {
@@ -17,6 +17,6 @@ const itemsCardImage:ListItemCard[] = [
         id: 4,
         description: 'vehiculo frontal.',
     }
-]
+];
 
-export {itemsCardImage}
+export {itemsCardImage};

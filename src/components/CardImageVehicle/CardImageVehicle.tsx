@@ -1,19 +1,19 @@
-import {Box, Typography} from "@mui/material";
-import {CustomButton} from "../../common/atoms/CustomButton.tsx";
-import {styleSx, styleImage} from "./CardImageVehicle.styles.ts";
-import {CardImageVehicleProps} from "../../types/components/CardImageVehicle.ts";
-import {FC, useRef} from "react";
+import {Box, Typography} from '@mui/material';
+import {CustomButton} from '../../common/atoms/CustomButton.tsx';
+import {styleImage, styleSx} from './CardImageVehicle.styles.ts';
+import {CardImageVehicleProps} from '../../types/components/CardImageVehicle.ts';
+import {FC, useRef} from 'react';
 
-const CardImageVehicle:FC<CardImageVehicleProps> = (props) => {
+const CardImageVehicle: FC<CardImageVehicleProps> = (props) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const openFileDialog = () => {
         if (fileInputRef.current) {
-            fileInputRef.current.click()
+            fileInputRef.current.click();
         }
-    }
+    };
     return (
         <>
-            <Typography  variant='subtitle1'>Fotografia No: {props.id}: <br/> {props.description}</Typography>
+            <Typography variant='subtitle1'>Fotografia No: {props.id}: <br/> {props.description}</Typography>
             <Box sx={styleSx.boxImage}>
                 {
                     props.image && (
@@ -30,11 +30,11 @@ const CardImageVehicle:FC<CardImageVehicleProps> = (props) => {
             <input
                 type="file"
                 ref={fileInputRef}
-                style={{ display: 'none' }}
+                style={{display: 'none'}}
                 onChange={(e) => props.handleFile(e, props.id)}
             />
         </>
     );
 };
 
-export {CardImageVehicle}
+export {CardImageVehicle};

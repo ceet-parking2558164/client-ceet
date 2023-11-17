@@ -7,12 +7,12 @@ interface RoutesApp {
 
 interface RoutesGlobals {
     ROOT: string,
-    PROFILE: string
+    PROFILE: string,
+    MESSAGE: string
 }
 
 interface RoutesAdmin {
     REGISTER_USER: string
-    MESSAGE: string
 }
 
 interface RoutesUser {
@@ -20,4 +20,4 @@ interface RoutesUser {
     REGISTER_VEHICLE: string
 }
 
-export type {RoutesApp, RoutesUser, RoutesGlobals, RoutesAdmin}
+export type {RoutesApp, RoutesUser, RoutesGlobals, RoutesAdmin};

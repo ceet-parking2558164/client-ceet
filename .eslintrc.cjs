@@ -14,5 +14,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    semi: ["error", "always"],
+    eqeqeq: ["error", "always"],
+    quotes: ["error", "single"]
   },
 }

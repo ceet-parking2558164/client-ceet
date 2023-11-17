@@ -1,5 +1,5 @@
-import {SxProps} from "@mui/material";
-import {CSSProperties} from "react";
+import {SxProps} from '@mui/material';
+import {CSSProperties} from 'react';
 
 interface StyleSx {
     customInput: SxProps
@@ -16,12 +16,12 @@ const styleSx:StyleSx = {
         height: '15%',
         mt: 2
     }
-}
+};
 
 const styleFormUser:CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
     gap: 15
-}
+};
 
-export {styleFormUser, styleSx}
+export {styleFormUser, styleSx};

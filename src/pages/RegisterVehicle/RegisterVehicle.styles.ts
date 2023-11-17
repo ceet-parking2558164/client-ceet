@@ -1,4 +1,4 @@
-import {SxProps} from "@mui/material";
+import {SxProps} from '@mui/material';
 
 
 interface RegisterVehicle {
@@ -23,6 +23,6 @@ const styleSx:RegisterVehicle = {
         height: '15%',
         mt: 2
     }
-}
+};
 
-export {styleSx}
+export {styleSx};

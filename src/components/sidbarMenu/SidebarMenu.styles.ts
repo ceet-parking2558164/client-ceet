@@ -1,4 +1,4 @@
-import {SxProps} from "@mui/material";
+import {SxProps} from '@mui/material';
 
 const styleContainer:SxProps = {
     width: '100%',
@@ -7,6 +7,6 @@ const styleContainer:SxProps = {
     alignItems: 'flex-start',
     flexDirection: 'column',
 
-}
+};
 
-export {styleContainer}
+export {styleContainer};

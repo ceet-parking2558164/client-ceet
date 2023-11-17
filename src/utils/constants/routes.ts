@@ -1,28 +1,28 @@
-import {RoutesApp, RoutesUser, RoutesGlobals, RoutesAdmin} from "../../types/routes/RoutesApp.ts";
+import {RoutesApp, RoutesUser, RoutesGlobals, RoutesAdmin} from '../../types/routes/RoutesApp.ts';
 
 const routesPublics:RoutesApp = {
     HOME: '/',
     LOGIN: '/login-user',
     RECOVERY: '/recovery-password',
     RESET: '/reset-password'
-}
+};
 
 const routesGlobals:RoutesGlobals = {
-    ROOT: '/welcome-system-user',
-    PROFILE: '/profile'
-}
+    ROOT: '/welcome-system',
+    PROFILE: '/profile',
+    MESSAGE: 'message'
+};
 
 const routesUser:RoutesUser = {
-    QR_VEHICLE: '/qr-vehicle-user',
+    QR_VEHICLE: '/qr-vehicle',
     REGISTER_VEHICLE: '/register-vehicle'
-}
-const routeAdmin:RoutesAdmin = {
+};
+const routesAdmin:RoutesAdmin = {
     REGISTER_USER: '/register-user',
-    MESSAGE: '/message'
-}
+};
 export {
     routesPublics,
     routesUser,
     routesGlobals,
-    routeAdmin
-}
+    routesAdmin
+};

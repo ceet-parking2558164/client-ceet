@@ -1,6 +1,6 @@
-import {theme} from "../../theme/theme.ts";
-import {SxProps} from "@mui/material";
-import {CSSProperties} from "react";
+import {theme} from '../../theme/theme.ts';
+import {SxProps} from '@mui/material';
+import {CSSProperties} from 'react';
 interface HeaderStyles {
     boxImage: SxProps,
     styleBadge: SxProps,
@@ -58,12 +58,12 @@ const styleGlobal:HeaderStyles = {
             transform: 'scale(1.2)',
         }
     }
-}
+};
 
 const styleHeader:Header ={
     header: {
         width: '100%',
-        height: 100,
+        height: '100px',
         backgroundColor: theme.palette.primary.main,
         padding: 3,
         display: 'flex',
@@ -75,9 +75,9 @@ const styleHeader:Header ={
         width: '70px',
         height: '70px'
     },
-}
+};
 
 
-export {styleGlobal, styleHeader}
+export {styleGlobal, styleHeader};
 
 

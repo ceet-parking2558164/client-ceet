@@ -1,4 +1,4 @@
-import {SxProps} from "@mui/material";
+import {SxProps} from '@mui/material';
 
 interface QrImage {
     containerMain:SxProps
@@ -12,6 +12,6 @@ const styleSx:QrImage = {
         mt: 3,
         gap: 3
     }
-}
+};
 
-export {styleSx}
+export {styleSx};

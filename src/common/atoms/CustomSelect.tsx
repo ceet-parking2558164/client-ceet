@@ -1,21 +1,24 @@
-import {FormControl, FormHelperText, InputLabel, MenuItem, Select} from "@mui/material";
-import {CustomSelectProps} from "../../types/atoms/CustomSelectProps.ts";
-import {FC} from "react";
+import {FormControl, FormHelperText, InputLabel, MenuItem, Select} from '@mui/material';
+import {CustomSelectProps} from '../../types/atoms/CustomSelectProps.ts';
+import {FC} from 'react';
 
 const CustomSelect:FC<CustomSelectProps> = (props) => {
-    const {options, valueSelect, sx} = props;
+    const {options, form} = props;
+
     const error = null;
     return (
-        <FormControl fullWidth sx={sx}>
-            <InputLabel
-            >{props.label}</InputLabel>
+        <FormControl fullWidth >
+            <InputLabel id="demo-simple-select-label">{props.label}</InputLabel>
             <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                {...props}
                 label={props.label}
-                value={valueSelect}
+                {...form}
             >
                 {
-                    options.map((opc:string) => (
-                        <MenuItem key={opc}>
+                    options.map((opc) => (
+                        <MenuItem key={opc} value={opc}>
                             {opc}
                         </MenuItem>
                     ))

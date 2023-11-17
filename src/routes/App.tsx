@@ -1,32 +1,31 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Header} from "../components/Header/Header.tsx";
-import {LayoutMain} from "../containers/Layout/LayoutMain.tsx";
-import {LoginForm} from "../pages/Login/LoginForm.tsx";
-import {Home} from "../pages/Home/Home.tsx";
-import {RecoveryPassword} from "../pages/RecoveryPassword/RecoveryPassword.tsx";
-import {routesPublics} from "../utils/constants/routes.ts";
-import {ProtectRoutes} from './ProtectRoutes.tsx'
-import {ProtectRoutesUsers} from "./ProtectRoutesUsers.tsx";
-import {routesGlobals} from "../utils/constants/routes.ts";
-import {ProtectRoutesAdmin} from "./ProtectRoutesAdmin.tsx";
+import {BrowserRouter, Route} from 'react-router-dom';
+import {Header} from '../components/Header/Header.tsx';
+import {ProtectRoutes} from './ProtectRoutes.tsx';
+import {ProtectRoutesUsers} from './ProtectRoutesUsers.tsx';
+import {ProtectRoutesAdmin} from './ProtectRoutesAdmin.tsx';
+import {RoutesNotFound} from './RoutesNotFound.tsx';
+import {RoutesPublic} from './RoutesPublics.tsx';
 
 function App() {
     return (
         <BrowserRouter>
             <Header/>
-            <LayoutMain>
-                <Routes>
-                    <Route path={routesPublics.HOME} element={<Home/>}/>
-                    <Route path={routesPublics.LOGIN} element={<LoginForm/>}/>
-                    <Route path={routesPublics.RECOVERY} element={<RecoveryPassword/>}/>
-                    <Route element={<ProtectRoutes />}>
-                        <Route path={`${routesGlobals.ROOT}/*`} element={<ProtectRoutesUsers />} />
-                        <Route path={`${routesGlobals.ROOT}/admin/*`} element={<ProtectRoutesAdmin />} />
-                    </Route>
-                </Routes>
-            </LayoutMain>
+            <RoutesNotFound>
+                <Route path='/*' element={<RoutesPublic/>}/>
+                <Route path={'/welcome-system'} element={<ProtectRoutes/>}>
+                    <Route path={'/welcome-system/user/*'} element={<ProtectRoutesUsers/>}/>
+                    <Route path={'/welcome-system/admin/*'} element={<ProtectRoutesAdmin/>}/>
+                </Route>
+            </RoutesNotFound>
         </BrowserRouter>
-    )
+    );
 }
 
-export default App
+
+export default App;
+
+
+
+
+
+

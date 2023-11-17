@@ -1,5 +1,5 @@
-import {SxProps} from "@mui/material";
-import {CSSProperties} from "react";
+import {SxProps} from '@mui/material';
+import {CSSProperties} from 'react';
 
 interface CardImage {
     boxImage: SxProps,
@@ -18,11 +18,11 @@ const styleSx:CardImage = {
         mt: 2,
         fontSize: 10
     }
-}
+};
 
 const styleImage:CSSProperties = {
     width: '100%',
     height: '100%',
     borderRadius: 10
-}
-export {styleSx, styleImage}
+};
+export {styleSx, styleImage};

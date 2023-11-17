@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import {ReactNode} from 'react';
 
 interface TabPanel {
     children: ReactNode,
@@ -6,4 +6,4 @@ interface TabPanel {
     index: number
 }
 
-export type {TabPanel}
+export type {TabPanel};

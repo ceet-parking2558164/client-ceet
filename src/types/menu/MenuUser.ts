@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import {ReactNode} from 'react';
 
 
 interface MenuUser {
@@ -11,4 +11,4 @@ interface ListUser {
     list: MenuUser[]
 }
 
-export type {MenuUser, ListUser}
+export type {MenuUser, ListUser};

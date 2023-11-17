@@ -1,7 +1,7 @@
 const Welcome = () => {
     return (
         <div>
-            Welcome user
+            Welcome users
         </div>
     );
 };

@@ -1,5 +1,5 @@
-import {SxProps} from "@mui/material";
-import {CSSProperties} from "react";
+import {SxProps} from '@mui/material';
+import {CSSProperties} from 'react';
 
 interface FormProfile  {
     title:SxProps,
@@ -38,12 +38,12 @@ const styleSx:FormProfile = {
         opacity: 0.5,
         cursor: 'pointer'
     }
-}
+};
 
 const stylesForm:CSSProperties = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column'
-}
+};
 
-export {stylesForm, styleSx}
+export {stylesForm, styleSx};

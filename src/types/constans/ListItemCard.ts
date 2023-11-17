@@ -4,4 +4,4 @@ interface ListItemCard {
     image?: string
 }
 
-export type {ListItemCard}
+export type {ListItemCard};

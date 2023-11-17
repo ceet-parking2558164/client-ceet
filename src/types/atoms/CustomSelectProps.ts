@@ -1,9 +1,9 @@
-import {SelectProps, SxProps} from "@mui/material";
+import {SelectProps} from '@mui/material';
+import {UseFormRegisterReturn} from 'react-hook-form';
 
 interface CustomSelectProps extends SelectProps{
     options: string[],
-    valueSelect: string
-    sx?: SxProps
+    form: UseFormRegisterReturn
 }
 
-export type {CustomSelectProps}
+export type {CustomSelectProps};

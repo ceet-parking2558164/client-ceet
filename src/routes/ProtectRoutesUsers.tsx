@@ -1,35 +1,36 @@
-import {Route, Routes} from "react-router-dom";
-import {NotFound} from "../pages/NotFound/NotFound.tsx";
-import {LayoutUser} from "../containers/LayoutUser/LayoutUser.tsx";
-import {listMenuUser} from "../utils/menu/MenuUser.tsx";
-import {QrImage} from "../common/molecules/QrImage/QrImage.tsx";
-import {RegisterVehicle} from "../pages/RegisterVehicle/RegisterVehicle.tsx";
-import {Welcome} from "../pages/Welcome/Welcome.tsx";
-import {routesUser, routesGlobals} from "../utils/constants/routes.ts";
-import {ProfileUser} from "../pages/Profile/ProfileUser.tsx";
+import {Route, Routes} from 'react-router-dom';
+import {NotFound} from '../pages/NotFound/NotFound.tsx';
+import {listMenuUser} from '../utils/menu/MenuUser.tsx';
+import {QrImage} from '../common/molecules/QrImage/QrImage.tsx';
+import {RegisterVehicle} from '../pages/RegisterVehicle/RegisterVehicle.tsx';
+import {Welcome} from '../pages/Welcome/Welcome.tsx';
+import {ProfileUser} from '../pages/Profile/ProfileUser.tsx';
+import {useAppSelector} from '../hooks/useAppRedux.ts';
+import {LayoutPrivate} from '../containers/LayoutPrivate/LayoutPrivate.tsx';
+import {routesGlobals, routesUser} from '../utils/constants/routes.ts';
+import {Messages} from '../pages/Messages/Messages.tsx';
+
 
 const ProtectRoutesUsers = () => {
-
-    const role = null
-
-    console.log(role)
-
+    const userAuth = useAppSelector(state => state.auth.user);
     return (
         <>
             {
-                role === 'Usuario' ? (
-                    <LayoutUser list={listMenuUser}>
+                userAuth?.rol === 'Usuario' ? (
+                    <LayoutPrivate list={listMenuUser}>
                         <Routes>
-                            <Route path='/' element={<Welcome/>} />
-                            <Route path={routesGlobals.PROFILE} element={<ProfileUser />} />
-                            <Route path={routesUser.QR_VEHICLE} element={<QrImage />} />
-                            <Route path={routesUser.REGISTER_VEHICLE} element={<RegisterVehicle />} />
+                            <Route index element={<Welcome/>}/>
+                            <Route path={routesGlobals.PROFILE} element={<ProfileUser/>}/>
+                            <Route path={routesUser.QR_VEHICLE} element={<QrImage/>}/>
+                            <Route path={routesUser.REGISTER_VEHICLE} element={<RegisterVehicle/>}/>
+                            <Route path={routesGlobals.MESSAGE} element={<Messages/>}/>
                         </Routes>
-                    </LayoutUser>
-                ):<NotFound />
+                    </LayoutPrivate>
+                ) : <NotFound/>
             }
         </>
     );
 };
+
 
 export {ProtectRoutesUsers};

@@ -1,8 +1,8 @@
-import {CSSProperties} from "react";
+import {CSSProperties} from 'react';
 
 const stylesLink:CSSProperties = {
     textDecoration: 'none',
     color: 'black'
-}
+};
 
-export {stylesLink}
+export {stylesLink};

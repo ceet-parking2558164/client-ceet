@@ -1,4 +1,4 @@
-import {ChangeEvent} from "react";
+import {ChangeEvent} from 'react';
 
 interface CardImageVehicleProps {
     id:number,
@@ -8,4 +8,4 @@ interface CardImageVehicleProps {
 }
 
 
-export type {CardImageVehicleProps}
+export type {CardImageVehicleProps};

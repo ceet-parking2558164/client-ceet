@@ -1,4 +1,4 @@
-import {CSSProperties} from "react";
+import {CSSProperties} from 'react';
 
 interface FormProperties {
     formContainer: CSSProperties
@@ -25,6 +25,6 @@ const styleFormLogin:FormProperties = {
         transform: 'rotate(45deg)',
         borderRadius: 10
     }
-}
+};
 
-export {styleFormLogin}
+export {styleFormLogin};
