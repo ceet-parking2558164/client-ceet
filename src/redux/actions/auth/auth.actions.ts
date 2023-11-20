@@ -9,9 +9,13 @@ const actionLogin = (state:InitialStateUser, action:PayloadAction<Token>) => {
     }
 };
 
+const actionLoading = (state:InitialStateUser, action:PayloadAction<boolean>) => {
+    state.loading = action.payload;
+};
+
 const actionLogout = (state:InitialStateUser) => {
     removeData('token');
     state.user = null;
 };
 
-export {actionLogin, actionLogout};
+export {actionLogin, actionLogout, actionLoading};

@@ -5,6 +5,7 @@ import {Home} from '../pages/Home/Home.tsx';
 import {LoginForm} from '../pages/Login/LoginForm.tsx';
 import {RecoveryPassword} from '../pages/RecoveryPassword/RecoveryPassword.tsx';
 import {getAccessToken} from '../utils/auth/localStorage.ts';
+import {ResetPassword} from '../pages/ResetPassword/ResetPassword.tsx';
 
 
 const RoutesPublic = () => {
@@ -18,6 +19,7 @@ const RoutesPublic = () => {
                             <Route path={routesPublics.HOME} element={<Home/>}/>
                             <Route path={routesPublics.LOGIN} element={<LoginForm/>}/>
                             <Route path={routesPublics.RECOVERY} element={<RecoveryPassword/>}/>
+                            <Route path={routesPublics.RESET} element={<ResetPassword/>}/>
                         </Routes>
                     </LayoutPublic>
                 ) : <Navigate to='/welcome-system'/>

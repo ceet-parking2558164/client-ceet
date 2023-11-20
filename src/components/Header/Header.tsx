@@ -40,8 +40,10 @@ const Header = () => {
                     {
                         userAuth && (
                             <Box sx={styleGlobal.boxIcon}>
-                                <Link to={`${routesGlobals.ROOT}/admin/message`}>
+                                <Link to={`${routesGlobals.ROOT}`}>
                                     <CustomIcon Icon={Home} sxStyles={styleGlobal.iconsHome}/>
+                                </Link>
+                                <Link to={`${routesGlobals.ROOT}/${routesGlobals.MESSAGE}`}>
                                     <Badge badgeContent={1} color='secondary' sx={styleGlobal.styleBadge}>
                                         <CustomIcon Icon={Mail} sxStyles={styleGlobal.iconsMail}/>
                                     </Badge>

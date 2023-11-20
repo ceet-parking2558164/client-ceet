@@ -4,12 +4,12 @@ const routesPublics:RoutesApp = {
     HOME: '/',
     LOGIN: '/login-user',
     RECOVERY: '/recovery-password',
-    RESET: '/reset-password'
+    RESET: '/new-password'
 };
 
 const routesGlobals:RoutesGlobals = {
     ROOT: '/welcome-system',
-    PROFILE: '/profile',
+    PROFILE: 'profile',
     MESSAGE: 'message'
 };
 

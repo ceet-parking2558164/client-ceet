@@ -6,4 +6,18 @@ interface ErrorsLoginForm {
     errorMaxPassword: boolean
 }
 
-export type {ErrorsLoginForm};
+interface ErrorsFormRecovery {
+    errorEmail: boolean,
+    errorPattern: boolean,
+}
+
+interface NewPassword {
+    errorPassword: boolean,
+    errorMinPassword: boolean,
+    errorMaxPassword: boolean,
+    errorNewPassword: boolean
+    errorMinNewPassword: boolean,
+    errorMaxNewPassword: boolean,
+}
+
+export type {ErrorsLoginForm, ErrorsFormRecovery, NewPassword};

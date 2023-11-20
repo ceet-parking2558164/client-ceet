@@ -8,14 +8,14 @@ const CustomInput: FC<CustomInputProps> = (props) => {
     const [showPassword, setShowPassword] = useState<boolean>(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-    const {password, sx, form} = props;
+    const {password, sx, form, label} = props;
 
     return (
         <>
             {
                 password ? (
                     <FormControl sx={sx}>
-                        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                        <InputLabel htmlFor="outlined-adornment-password">{label}</InputLabel>
                         <OutlinedInput
                             {...form}
                             id="outlined-adornment-password"
@@ -27,7 +27,7 @@ const CustomInput: FC<CustomInputProps> = (props) => {
                                     </IconButton>
                                 </InputAdornment>
                             }
-                            label='Password'
+                            label={label}
                         />
                     </FormControl>
                 ) : (

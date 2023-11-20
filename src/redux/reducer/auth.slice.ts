@@ -1,6 +1,6 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 import {InitialStateUser} from '../../types/redux/InitialStateUser.ts';
-import {actionLogin, actionLogout} from '../actions/auth/auth.actions.ts';
+import {actionLogin, actionLogout, actionLoading} from '../actions/auth/auth.actions.ts';
 import {getAccessToken} from '../../utils/auth/localStorage.ts';
 import {getUserAction} from '../actions/user/user.actions.ts';
 
@@ -17,11 +17,14 @@ const authSlice = createSlice({
         login: actionLogin,
         logout: actionLogout,
         userAct: getUserAction,
-        setLoading: (state: InitialStateUser, action: PayloadAction<boolean>) => {
-            state.loading = action.payload;
-        }
+        setLoading: actionLoading,
     }
 });
 
-export const {logout, userAct, setLoading, login} = authSlice.actions;
+export const {
+    logout,
+    userAct,
+    setLoading,
+    login,
+} = authSlice.actions;
 export {authSlice};
