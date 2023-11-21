@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';
-import {Status} from '../../types/alert/AlertMessage.ts';
+import {Status} from '../../types/utils/alert/AlertMessage.ts';
 
 
 

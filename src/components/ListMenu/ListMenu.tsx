@@ -1,6 +1,6 @@
 import {Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
 import {FC} from 'react';
-import {ListUser} from '../../types/menu/MenuUser.ts';
+import {ListUser} from '../../types/utils/menu/MenuUser.ts';
 import {NavLink} from 'react-router-dom';
 import {AccountBox, Home} from '@mui/icons-material';
 import {CustomItemIcon} from '../../common/atoms/CustomItemIcon.tsx';

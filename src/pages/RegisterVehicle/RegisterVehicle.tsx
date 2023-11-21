@@ -1,10 +1,9 @@
 import {Box, Container, Typography} from '@mui/material';
-import {CustomSelect} from '../../common/atoms/CustomSelect.tsx';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {styleSx} from './RegisterVehicle.styles.ts';
 import {ChangeEvent, useState} from 'react';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
-import {ListItemCard} from '../../types/constans/ListItemCard.ts';
+import {ListItemCard} from '../../types/utils/constants/ListItemCard.ts';
 import {itemsCardImage} from '../../utils/constants/listItemsCard.ts';
 import {CardImageVehicle} from '../../components/CardImageVehicle/CardImageVehicle.tsx';
 
@@ -39,10 +38,11 @@ const RegisterVehicle = () => {
         <Container>
             <Typography variant='h4' sx={{textAlign: 'center', p: 2}}>Ingresa los datos del vehiculo</Typography>
             <form onSubmit={handleSendForm}>
-                <CustomSelect
-                    label='Tipo de vehiculo'
-                    options={['Bicicleta', 'Carro', 'Motocicleta']} valueSelect={''}
-                />
+                {/*<CustomSelect*/}
+                {/*    label='Tipo de vehiculo'*/}
+                {/*    options={['Bicicleta', 'Carro', 'Motocicleta']} */}
+                {/*    form={}                */}
+                {/*/>*/}
                 <Box sx={styleSx.boxDynamic}>
                     <Box sx={{width: '50%'}}>
                         {

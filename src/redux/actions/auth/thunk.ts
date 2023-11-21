@@ -4,7 +4,7 @@ import {AppDispatch} from '../../store/store.ts';
 import {login, setLoading} from '../../reducer/auth.slice.ts';
 import {FieldValues} from 'react-hook-form';
 import {alertMessage} from '../../../utils/alert/AlertMessage.ts';
-import {Status} from '../../../types/alert/AlertMessage.ts';
+import {Status} from '../../../types/utils/alert/AlertMessage.ts';
 
 interface ErrorCustom {
     error: string

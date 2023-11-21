@@ -4,9 +4,9 @@ import {FieldValues} from 'react-hook-form';
 import {useNavigate} from 'react-router-dom';
 import {routesGlobals, routesPublics} from '../utils/constants/routes.ts';
 import {alertMessage} from '../utils/alert/AlertMessage.ts';
-import {Status} from '../types/alert/AlertMessage.ts';
+import {Status} from '../types/utils/alert/AlertMessage.ts';
 
-const useActionUser = (token?:string | null) => {
+const useActionAuth = (token?:string | null) => {
 
     const navigate = useNavigate();
 
@@ -39,6 +39,8 @@ const useActionUser = (token?:string | null) => {
         }
     };
 
+
+
     return {
         handleLogin,
         handleRecoveryPassword,
@@ -46,4 +48,4 @@ const useActionUser = (token?:string | null) => {
     };
 };
 
-export {useActionUser};
+export {useActionAuth};

@@ -1,4 +1,4 @@
-import {MenuUser} from '../../types/menu/MenuUser.ts';
+import {MenuUser} from '../../types/utils/menu/MenuUser.ts';
 import {CustomItemIcon} from '../../common/atoms/CustomItemIcon.tsx';
 import {Dashboard, PersonAddAlt, CarRepair} from '@mui/icons-material';
 import { routesGlobals, routesAdmin} from '../constants/routes.ts';

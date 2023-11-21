@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {ItemList} from '../../types/atoms/CustomIconProps.ts';
+import {ItemList} from '../../types/common/atoms/CustomIconProps.ts';
 import {ListItemIcon} from '@mui/material';
 
 const CustomItemIcon: FC<ItemList> = ({Icon, sxStyles, ...rest}) => {

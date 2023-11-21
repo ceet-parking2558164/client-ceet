@@ -1,4 +1,4 @@
-import {ResponseUser} from '../form/User.ts';
+import {ResponseUser} from '../pages/form/User.ts';
 
 interface InitialStateUser {
     user: ResponseUser | null,

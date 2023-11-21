@@ -1,4 +1,4 @@
-import {TabPanel} from '../../../types/molecules/TabPanel.ts';
+import {TabPanel} from '../../../types/common/molecules/TabPanel.ts';
 import {FC} from 'react';
 import {Box} from '@mui/material';
 

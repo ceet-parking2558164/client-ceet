@@ -1,4 +1,4 @@
-import {RegisterUserI} from '../form/User.ts';
+import {RegisterUserI} from '../pages/form/User.ts';
 
 interface UseForm {
     valuesFormUser?:RegisterUserI

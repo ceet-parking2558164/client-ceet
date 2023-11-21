@@ -1,6 +1,6 @@
-import {ErrorsLoginForm} from '../../types/form/errorForm/ErrorsLoginForm.ts';
+import {ErrorsLoginForm} from '../../types/pages/errorForm/ErrorsLoginForm.ts';
 import {FieldErrors} from 'react-hook-form';
-import {Login} from '../../types/form/Login.ts';
+import {Login} from '../../types/pages/LoginUser/Login.ts';
 
 
 const validateForm = (errors: FieldErrors<Login>): ErrorsLoginForm => {

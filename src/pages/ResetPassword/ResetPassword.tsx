@@ -4,7 +4,7 @@ import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
 import {styleFormReset, sxReset} from './ResetPassword.styles.ts';
 import {useFormRegister} from '../../hooks/useFormRegister.ts';
-import {useActionUser} from '../../hooks/useActionUser.ts';
+import {useActionAuth} from '../../hooks/useActionAuth.ts';
 import {validateForm} from './validateForm.ts';
 
 const ResetPassword = () => {
@@ -19,7 +19,7 @@ const ResetPassword = () => {
         errors,
     } =useFormRegister();
 
-    const {handleNewPassword} = useActionUser(token);
+    const {handleNewPassword} = useActionAuth(token);
 
     const {
         errorPassword,

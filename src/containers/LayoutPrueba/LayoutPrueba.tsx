@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {LayoutPruebaProps} from '../../types/children/ChildrenProps.ts';
+import {LayoutPruebaProps} from '../../types/containers/children/ChildrenProps.ts';
 import {Box} from '@mui/material';
 
 

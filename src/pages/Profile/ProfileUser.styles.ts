@@ -1,5 +1,6 @@
 import {SxProps} from '@mui/material';
 import {CSSProperties} from 'react';
+import {theme} from '../../theme/theme.ts';
 
 interface FormProfile  {
     title:SxProps,
@@ -7,7 +8,8 @@ interface FormProfile  {
     boxInputs:SxProps,
     boxInputPar:SxProps
     iconCamera:SxProps,
-
+    boxInput:SxProps
+    iconEdit: SxProps
 }
 
 
@@ -26,6 +28,18 @@ const styleSx:FormProfile = {
         display: 'flex',
         gap: 3,
         flexDirection: 'column'
+    },
+    boxInput: {
+        width: '50%',
+        position: 'relative'
+    },
+    iconEdit: {
+        position: 'absolute',
+        right: 20,
+        top: 15,
+        cursor: 'pointer',
+        opacity: 0.5,
+        color: theme.palette.primary.main
     },
     boxInputPar: {
         display: 'flex',

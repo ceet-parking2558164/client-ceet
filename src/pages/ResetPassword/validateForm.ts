@@ -1,6 +1,6 @@
-import {NewPassword} from '../../types/form/errorForm/ErrorsLoginForm.ts';
+import {NewPassword} from '../../types/pages/errorForm/ErrorsLoginForm.ts';
 import {FieldErrors} from 'react-hook-form';
-import {FormNewPassword} from '../../types/form/FormNewPassword.ts';
+import {FormNewPassword} from '../../types/pages/ResetPassword/FormNewPassword.ts';
 
 
 const validateForm = (errors: FieldErrors<FormNewPassword>): NewPassword => {

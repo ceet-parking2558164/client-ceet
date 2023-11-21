@@ -1,6 +1,6 @@
 import {FieldErrors} from 'react-hook-form';
-import {ErrorsFormRecovery} from '../../types/form/errorForm/ErrorsLoginForm.ts';
-import {FormRecoveryPassword} from '../../types/form/FormRecoveryPassword.ts';
+import {ErrorsFormRecovery} from '../../types/pages/errorForm/ErrorsLoginForm.ts';
+import {FormRecoveryPassword} from '../../types/pages/RecoveryPassword/FormRecoveryPassword.ts';
 
 
 const validateForm = (errors: FieldErrors<FormRecoveryPassword>): ErrorsFormRecovery => {

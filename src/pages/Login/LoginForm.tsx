@@ -7,7 +7,7 @@ import {routesPublics} from '../../utils/constants/routes.ts';
 import {styleFormLogin} from './LoginForm.styles.ts';
 import {stylesLink} from '../../styles/links.styles.ts';
 import {useFormRegister} from '../../hooks/useFormRegister.ts';
-import {useActionUser} from '../../hooks/useActionUser.ts';
+import {useActionAuth} from '../../hooks/useActionAuth.ts';
 import {validateForm} from './validateForm.ts';
 import {useAppSelector} from '../../hooks/useAppRedux.ts';
 
@@ -20,7 +20,7 @@ const LoginForm = () => {
         formState: {errors},
     } = useFormRegister();
 
-    const {handleLogin} = useActionUser();
+    const {handleLogin} = useActionAuth();
 
     const {
         errorEmail,

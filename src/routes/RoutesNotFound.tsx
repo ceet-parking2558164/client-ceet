@@ -1,6 +1,6 @@
 import {Route, Routes} from 'react-router-dom';
 import {FC} from 'react';
-import {ChildrenProps} from '../types/children/ChildrenProps.ts';
+import {ChildrenProps} from '../types/containers/children/ChildrenProps.ts';
 import {NotFound} from '../pages/NotFound/NotFound.tsx';
 
 const RoutesNotFound: FC<ChildrenProps> = ({children}) => {

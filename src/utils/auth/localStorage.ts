@@ -1,4 +1,4 @@
-import {Data} from '../../types/localStorage/setData.ts';
+import {Data} from '../../types/utils/auth/localStorage/setData.ts';
 
 const saveDataLocalStorage = (key:string, data:Data) => {
     localStorage.setItem(key, JSON.stringify(data));

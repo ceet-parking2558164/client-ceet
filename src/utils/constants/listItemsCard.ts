@@ -1,4 +1,4 @@
-import {ListItemCard} from '../../types/constans/ListItemCard.ts';
+import {ListItemCard} from '../../types/utils/constants/ListItemCard.ts';
 
 const itemsCardImage:ListItemCard[] = [
     {

@@ -6,7 +6,9 @@ const useFormRegister = <T extends FieldValues>() => {
         handleSubmit,
         watch,
         formState,
-        reset
+        reset,
+        setValue
+
     } = useForm<T>();
 
     const {errors} = formState;
@@ -18,7 +20,8 @@ const useFormRegister = <T extends FieldValues>() => {
         watch,
         formState,
         reset,
-        errors
+        errors,
+        setValue
     };
 };
 

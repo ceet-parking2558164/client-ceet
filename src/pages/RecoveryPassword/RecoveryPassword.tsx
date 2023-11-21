@@ -3,7 +3,7 @@ import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
 import {styleFormRecovery, sxRecovery} from './RecoveryPassword.styles.ts';
 import {useFormRegister} from '../../hooks/useFormRegister.ts';
-import {useActionUser} from '../../hooks/useActionUser.ts';
+import {useActionAuth} from '../../hooks/useActionAuth.ts';
 import {validateForm} from './ValidateForm.ts';
 import {useAppSelector} from '../../hooks/useAppRedux.ts';
 import {CustomSpinner} from '../../common/atoms/CustomSpinner.tsx';
@@ -20,7 +20,7 @@ const RecoveryPassword = () => {
 
     const {errorEmail, errorPattern} = validateForm(errors);
 
-    const {handleRecoveryPassword} = useActionUser();
+    const {handleRecoveryPassword} = useActionAuth();
 
     return (
         <Container maxWidth='sm' sx={{mt: 20}}>

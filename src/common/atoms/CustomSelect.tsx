@@ -1,32 +1,50 @@
-import {FormControl, FormHelperText, InputLabel, MenuItem, Select} from '@mui/material';
-import {CustomSelectProps} from '../../types/atoms/CustomSelectProps.ts';
+import {FormControl, InputLabel, MenuItem, Select} from '@mui/material';
+
+import {CustomSelectProps} from '../../types/common/atoms/CustomSelectProps.ts';
 import {FC} from 'react';
 
 const CustomSelect:FC<CustomSelectProps> = (props) => {
-    const {options, form} = props;
 
-    const error = null;
+    const {options, form, value} = props;
+
     return (
-        <FormControl fullWidth >
-            <InputLabel id="demo-simple-select-label">{props.label}</InputLabel>
+        <FormControl fullWidth>
+            <InputLabel id="select-label">Tipo de documento</InputLabel>
             <Select
-                labelId="demo-simple-select-label"
+                labelId="select-label"
                 id="demo-simple-select"
-                {...props}
-                label={props.label}
+                value={value ? value : ''}
+                label='Tipo de documento'
                 {...form}
+                {...props}
             >
+                <MenuItem disabled value="">
+                    <em>Escoge una opcion</em>
+                </MenuItem>
                 {
-                    options.map((opc) => (
-                        <MenuItem key={opc} value={opc}>
+                    options.map((opc, index) => (
+                        <MenuItem key={index} value={opc}>
                             {opc}
                         </MenuItem>
                     ))
                 }
             </Select>
-            <FormHelperText>{error && 'Error'}</FormHelperText>
         </FormControl>
     );
 };
 
 export {CustomSelect};
+{/*<select*/}
+{/*    id="demo-simple-select"*/}
+{/*    defaultValue=''*/}
+{/*    {...form}*/}
+{/*>*/}
+{/*    <option value='' disabled>Select.......</option>*/}
+{/*    {*/}
+{/*        options.map((opc, index) => (*/}
+{/*            <option key={index} value={opc}>*/}
+{/*                {opc}*/}
+{/*            </option>*/}
+{/*        ))*/}
+{/*    }*/}
+{/*</select>*/}

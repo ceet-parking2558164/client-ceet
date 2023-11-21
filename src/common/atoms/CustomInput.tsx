@@ -1,6 +1,6 @@
 import {FC, useState} from 'react';
 import {FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField} from '@mui/material';
-import {CustomInputProps} from '../../types/atoms/CustomInputProps.ts';
+import {CustomInputProps} from '../../types/common/atoms/CustomInputProps.ts';
 import {Visibility, VisibilityOff} from '@mui/icons-material';
 
 const CustomInput: FC<CustomInputProps> = (props) => {
