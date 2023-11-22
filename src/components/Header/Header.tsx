@@ -12,16 +12,12 @@ import {MenuHeader} from '../../common/molecules/MenuHeader/MenuHeader.tsx';
 
 
 const Header = () => {
-
-
     const userAuth = useAppSelector(state => state.auth.user);
 
     const [anchorMenu, setAnchorMenu] = useState<null | HTMLElement>(null);
-
     const handleMenu = (e: MouseEvent<HTMLElement>) => {
         setAnchorMenu(e.currentTarget);
     };
-
 
     return (
         <header style={styleHeader.header}>
@@ -64,7 +60,7 @@ const Header = () => {
                 {
                     userAuth && (
                         <>
-                            <Avatar sx={styleGlobal.avatar} onClick={handleMenu}/>
+                            <Avatar sx={styleGlobal.avatar} onClick={handleMenu} src={userAuth && userAuth.imageProfile ? userAuth.imageProfile:  ''}/>
                             <MenuHeader anchor={anchorMenu} setAnchor={setAnchorMenu}/>
                         </>
                     )
