@@ -1,8 +1,16 @@
 import {UserService} from '../../../services/User.service.ts';
 import {AppDispatch} from '../../store/store.ts';
-import {setLoading, userAct} from '../../reducer/auth.slice.ts';
+import {setLoading, updateUser, userAct} from '../../reducer/auth.slice.ts';
+import {alertMessage} from '../../../utils/alert/AlertMessage.ts';
+import {Status} from '../../../types/utils/alert/AlertMessage.ts';
+import axios from 'axios';
 
 const userService = new UserService();
+interface ErrorCustom {
+    error: string
+    message: string
+    statusCode: number
+}
 
 const getUserToken = (token: string) => {
     return async function (dispatch: AppDispatch) {
@@ -20,4 +28,26 @@ const getUserToken = (token: string) => {
     };
 };
 
-export {getUserToken};
+const updateUserThunk = (data:FormData) => {
+    return async function(dispatch:AppDispatch){
+        try {
+            dispatch(setLoading(true));
+            const response = await userService.updateUser(data);
+            if (response.status === 200){
+                dispatch(updateUser(response.data));
+                dispatch(setLoading(false));
+                alertMessage('Usuario actualizado correctamente', Status.success);
+            }
+        }catch (e) {
+            console.error(e);
+            dispatch(setLoading(false));
+            if (axios.isAxiosError(e)){
+                dispatch(setLoading(false));
+                const error:ErrorCustom = e.response?.data;
+                alertMessage(error ? error.message: e.message && 'Inicia el servidor', Status.error );
+            }
+        }
+    };
+};
+
+export {getUserToken, updateUserThunk};

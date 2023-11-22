@@ -1,15 +1,10 @@
 import {ChangeEvent, useRef, useState} from 'react';
-import {ImageType, ImageUrlType} from '../types/pages/Profile/FormProfileUpdate.ts';
 
 const useActionUser = () => {
-    const [stateEdit, setStateEdit] = useState<number | null>(null);
-    const [imageUrl, setImageUrl] = useState<ImageUrlType>(null);
-    const [image, setImage] = useState<ImageType>(null);
+    const [imageUrl, setImageUrl] = useState<string | null>(null);
+    const [image, setImage] = useState<File>();
     const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-    const handleEdit = (num:number) => {
-        setStateEdit(num);
-    };
 
     const openFileDialog = () => {
         if (fileInputRef.current) {
@@ -28,10 +23,8 @@ const useActionUser = () => {
     };
 
     return {
-        handleEdit,
         openFileDialog,
         handlePhotoUser,
-        stateEdit,
         imageUrl,
         image,
         fileInputRef

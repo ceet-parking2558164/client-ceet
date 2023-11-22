@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 import {InitialStateUser} from '../../types/redux/InitialStateUser.ts';
 import {actionLogin, actionLogout, actionLoading} from '../actions/auth/auth.actions.ts';
 import {getAccessToken} from '../../utils/auth/localStorage.ts';
-import {getUserAction} from '../actions/user/user.actions.ts';
+import {getUserAction, updateUserAction} from '../actions/user/user.actions.ts';
 
 
 const initialState: InitialStateUser = {
@@ -17,6 +17,7 @@ const authSlice = createSlice({
         login: actionLogin,
         logout: actionLogout,
         userAct: getUserAction,
+        updateUser: updateUserAction,
         setLoading: actionLoading,
     }
 });
@@ -26,5 +27,6 @@ export const {
     userAct,
     setLoading,
     login,
+    updateUser
 } = authSlice.actions;
 export {authSlice};
