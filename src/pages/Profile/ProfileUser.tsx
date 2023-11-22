@@ -4,15 +4,11 @@ import {CameraAlt} from '@mui/icons-material';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
 import {stylesForm, styleSx} from './ProfileUser.styles.ts';
-import {useAppDispatch, useAppSelector} from '../../hooks/useAppRedux.ts';
+import {useAppSelector} from '../../hooks/useAppRedux.ts';
 import {useActionUser} from '../../hooks/useActionUser.ts';
 import {useFormRegister} from '../../hooks/useFormRegister.ts';
-import {FieldValues} from 'react-hook-form';
-import {updateUserThunk} from '../../redux/actions/user/thunk.ts';
 
 const ProfileUser = () => {
-
-    const dispatch = useAppDispatch();
 
     const {user} = useAppSelector(state => state.auth);
     const {register, handleSubmit} = useFormRegister();
@@ -20,23 +16,10 @@ const ProfileUser = () => {
     const {
         imageUrl,
         fileInputRef,
-        image,
         openFileDialog,
-        handlePhotoUser
+        handlePhotoUser,
+        handleUpdateUser
     } = useActionUser();
-
-
-    const handleUpdateUser = (data:FieldValues) => {
-        const formData = new FormData();
-        formData.append('firstName', data.firstName);
-        formData.append('lastName', data.lastName);
-        formData.append('phoneNumber', data.phoneNumber);
-        formData.append('email', data.email);
-        if (image){
-            formData.append('imageProfile', image);
-        }
-        dispatch(updateUserThunk(formData));
-    };
 
     return (
         <Container sx={{mt: 10}}>
