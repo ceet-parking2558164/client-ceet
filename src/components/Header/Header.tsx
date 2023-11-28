@@ -7,7 +7,7 @@ import {routesGlobals, routesPublics} from '../../utils/constants/routes.ts';
 import {styleGlobal, styleHeader} from './Header.styles.ts';
 import {stylesLink} from '../../styles/links.styles.ts';
 import logoSena from '../../assets/logo_sena.png';
-import {useAppSelector} from '../../hooks/useAppRedux.ts';
+import {useAppSelector} from '../../hooks/useRedux/useAppRedux.ts';
 import {MenuHeader} from '../../common/molecules/MenuHeader/MenuHeader.tsx';
 
 

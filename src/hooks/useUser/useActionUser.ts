@@ -1,7 +1,7 @@
 import {ChangeEvent, useRef, useState} from 'react';
 import {FieldValues} from 'react-hook-form';
-import {useAppDispatch} from './useAppRedux.ts';
-import {updateUserThunk} from '../redux/actions/user/thunk.ts';
+import {useAppDispatch} from '../useRedux/useAppRedux.ts';
+import {updateUserThunk} from '../../redux/actions/user/thunk.ts';
 
 const useActionUser = () => {
 
@@ -44,9 +44,9 @@ const useActionUser = () => {
         handlePhotoUser,
         handleUpdateUser,
         imageUrl,
-        image,
         fileInputRef
     };
+
 };
 
 

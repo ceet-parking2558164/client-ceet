@@ -3,8 +3,8 @@ import {useSearchParams} from 'react-router-dom';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
 import {styleFormReset, sxReset} from './ResetPassword.styles.ts';
-import {useFormRegister} from '../../hooks/useFormRegister.ts';
-import {useActionAuth} from '../../hooks/useActionAuth.ts';
+import {useFormRegister} from '../../hooks/useFormRegister/useFormRegister.ts';
+import {useActionAuth} from '../../hooks/useAuth/useActionAuth.ts';
 import {validateForm} from './validateForm.ts';
 
 const ResetPassword = () => {

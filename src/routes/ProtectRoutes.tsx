@@ -1,6 +1,6 @@
 import {Navigate, Outlet} from 'react-router-dom';
 import {routesPublics} from '../utils/constants/routes.ts';
-import {useAppDispatch, useAppSelector} from '../hooks/useAppRedux.ts';
+import {useAppDispatch, useAppSelector} from '../hooks/useRedux/useAppRedux.ts';
 import {useEffect} from 'react';
 import {getAccessToken} from '../utils/auth/localStorage.ts';
 import {getUserToken} from '../redux/actions/user/thunk.ts';

@@ -6,10 +6,10 @@ import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {routesPublics} from '../../utils/constants/routes.ts';
 import {styleFormLogin} from './LoginForm.styles.ts';
 import {stylesLink} from '../../styles/links.styles.ts';
-import {useFormRegister} from '../../hooks/useFormRegister.ts';
-import {useActionAuth} from '../../hooks/useActionAuth.ts';
+import {useFormRegister} from '../../hooks/useFormRegister/useFormRegister.ts';
+import {useActionAuth} from '../../hooks/useAuth/useActionAuth.ts';
 import {validateForm} from './validateForm.ts';
-import {useAppSelector} from '../../hooks/useAppRedux.ts';
+import {useAppSelector} from '../../hooks/useRedux/useAppRedux.ts';
 
 const LoginForm = () => {
 

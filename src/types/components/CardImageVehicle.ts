@@ -5,6 +5,7 @@ interface CardImageVehicleProps {
     description: string,
     handleFile: (e:ChangeEvent<HTMLInputElement>, id:number) => void,
     image?: string
+    type: boolean
 }
 
 

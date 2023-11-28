@@ -4,9 +4,9 @@ import {CameraAlt} from '@mui/icons-material';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
 import {stylesForm, styleSx} from './ProfileUser.styles.ts';
-import {useAppSelector} from '../../hooks/useAppRedux.ts';
-import {useActionUser} from '../../hooks/useActionUser.ts';
-import {useFormRegister} from '../../hooks/useFormRegister.ts';
+import {useAppSelector} from '../../hooks/useRedux/useAppRedux.ts';
+import {useActionUser} from '../../hooks/useUser/useActionUser.ts';
+import {useFormRegister} from '../../hooks/useFormRegister/useFormRegister.ts';
 
 const ProfileUser = () => {
 
@@ -20,6 +20,7 @@ const ProfileUser = () => {
         handlePhotoUser,
         handleUpdateUser
     } = useActionUser();
+
 
     return (
         <Container sx={{mt: 10}}>

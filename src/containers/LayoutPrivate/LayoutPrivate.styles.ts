@@ -14,8 +14,11 @@ const StylesSx:SxPropsStyles = {
         margin: 0
     },
     containerPage: {
+        flex: 1,
         bgcolor: theme.palette.primary.light,
-        p: 10
+        p: 10,
+        maxHeight: 'calc(100vh - 64px)',
+        overflowY: 'auto'
     }
 };
 

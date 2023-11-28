@@ -5,16 +5,15 @@ import {FC} from 'react';
 
 const CustomSelect:FC<CustomSelectProps> = (props) => {
 
-    const {options, form, value} = props;
+    const {options, form, value, label} = props;
 
     return (
         <FormControl fullWidth>
-            <InputLabel id="select-label">Tipo de documento</InputLabel>
+            <InputLabel id="select-label">{label}</InputLabel>
             <Select
                 labelId="select-label"
                 id="demo-simple-select"
                 value={value ? value : ''}
-                label='Tipo de documento'
                 {...form}
                 {...props}
             >

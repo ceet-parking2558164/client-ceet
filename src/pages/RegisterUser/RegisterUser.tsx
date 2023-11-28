@@ -2,7 +2,7 @@ import {Box, Container, Typography} from '@mui/material';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {CustomSelect} from '../../common/atoms/CustomSelect.tsx';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
-import {useFormRegister} from '../../hooks/useFormRegister.ts';
+import {useFormRegister} from '../../hooks/useFormRegister/useFormRegister.ts';
 import {styleFormUser, styleSx} from './RegisterUser.styles.ts';
 import {FieldValues} from 'react-hook-form';
 import {validateForm, optionsLabelErrors} from './validateForm.ts';

@@ -26,6 +26,7 @@ const CardImageVehicle: FC<CardImageVehicleProps> = (props) => {
                 textValue='Elegir archivo'
                 onClick={openFileDialog}
                 variant='contained'
+                disabled={props.type}
             />
             <input
                 type="file"

@@ -2,7 +2,7 @@ import {FC} from 'react';
 import {Menu, MenuItem} from '@mui/material';
 import {Link, useNavigate} from 'react-router-dom';
 import {routesGlobals} from '../../../utils/constants/routes.ts';
-import {useAppDispatch} from '../../../hooks/useAppRedux.ts';
+import {useAppDispatch} from '../../../hooks/useRedux/useAppRedux.ts';
 import {logout} from '../../../redux/reducer/auth.slice.ts';
 
 interface MenuProps {

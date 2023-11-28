@@ -1,10 +1,10 @@
-import {useAppDispatch} from './useAppRedux.ts';
-import {changePassword, loginUser, recoveryPassword} from '../redux/actions/auth/thunk.ts';
+import {useAppDispatch} from '../useRedux/useAppRedux.ts';
+import {changePassword, loginUser, recoveryPassword} from '../../redux/actions/auth/thunk.ts';
 import {FieldValues} from 'react-hook-form';
 import {useNavigate} from 'react-router-dom';
-import {routesGlobals, routesPublics} from '../utils/constants/routes.ts';
-import {alertMessage} from '../utils/alert/AlertMessage.ts';
-import {Status} from '../types/utils/alert/AlertMessage.ts';
+import {routesGlobals, routesPublics} from '../../utils/constants/routes.ts';
+import {alertMessage} from '../../utils/alert/AlertMessage.ts';
+import {Status} from '../../types/utils/alert/AlertMessage.ts';
 
 const useActionAuth = (token?:string | null) => {
 

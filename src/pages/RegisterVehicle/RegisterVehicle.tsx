@@ -1,60 +1,65 @@
 import {Box, Container, Typography} from '@mui/material';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {styleSx} from './RegisterVehicle.styles.ts';
-import {ChangeEvent, useState} from 'react';
+import {ChangeEvent} from 'react';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
-import {ListItemCard} from '../../types/utils/constants/ListItemCard.ts';
-import {itemsCardImage} from '../../utils/constants/listItemsCard.ts';
 import {CardImageVehicle} from '../../components/CardImageVehicle/CardImageVehicle.tsx';
-
-
-const state = ['Bicicleta', 'Carro', 'Motocicleta'];
+import {useFormRegister} from '../../hooks/useFormRegister/useFormRegister.ts';
+import { CustomSelect } from '../../common/atoms/CustomSelect.tsx';
+import {useActionVehicle} from '../../hooks/useVehicle/useActionVehicle.ts';
+import {optionsVehicles} from '../../utils/constants/listOptionsVehicles.ts';
+import {validateFormVehicle, optionErrorsForm} from './validateForm.ts';
+import {ModalError} from '../../components/ModalError/ModalError.tsx';
+import {ListOptionsVehicles} from '../../types/utils/constants/ListOptionsVehicles.ts';
 
 const RegisterVehicle = () => {
 
-    const [selectImage, setSelectImage] = useState<ListItemCard[]>(itemsCardImage);
-    const [imagesFormData, setImagesFormData] = useState<File[]>([]);
 
-    const handleFile = (event: ChangeEvent<HTMLInputElement>, id: number) => {
-        if (event.target.files) {
-            const imgSelect = event.target.files[0];
-            setImagesFormData((prevState) => [...prevState, imgSelect]);
-            if (imgSelect) {
-                const imageUrl: string = URL.createObjectURL(imgSelect);
-                const updateItems = selectImage.map(item => {
-                    if (item.id === id) return {...item, image: imageUrl};
-                    return item;
-                });
-                setSelectImage(updateItems);
-            }
-        }
-    };
+    const {
+        register,
+        handleSubmit,
+        watch,
+        errors,
+        reset
+    } = useFormRegister();
 
-    const handleSendForm = () => {
-        console.log(imagesFormData);
-    };
+    const {typeVehicle_id} = watch();
+
+    const optionsErrors = validateFormVehicle(errors);
+
+    let idTypeVehicle:ListOptionsVehicles|undefined;
+
+    if (typeVehicle_id){
+        idTypeVehicle = optionsVehicles.find(type => type.type === typeVehicle_id);
+    }
+
+    const {selectImage, handleSendForm, handleFile} = useActionVehicle(idTypeVehicle, reset);
+
 
     return (
         <Container>
             <Typography variant='h4' sx={{textAlign: 'center', p: 2}}>Ingresa los datos del vehiculo</Typography>
-            <form onSubmit={handleSendForm}>
-                {/*<CustomSelect*/}
-                {/*    label='Tipo de vehiculo'*/}
-                {/*    options={['Bicicleta', 'Carro', 'Motocicleta']} */}
-                {/*    form={}                */}
-                {/*/>*/}
+            <form onSubmit={handleSubmit(handleSendForm)}>
+                <CustomSelect
+                    label='Tipo de vehiculo'
+                    value={typeVehicle_id ? typeVehicle_id: ''}
+                    options={[optionsVehicles[0].type, optionsVehicles[1].type, optionsVehicles[2].type]}
+                    form={register('typeVehicle_id')}
+                />
                 <Box sx={styleSx.boxDynamic}>
                     <Box sx={{width: '50%'}}>
                         {
-                            state[0] === 'Bicicleta' ? (
+                            typeVehicle_id === 'Bicicleta' ? (
                                 <>
                                     <CustomInput
                                         sx={styleSx.inputCustom}
                                         label='Tipo de bibleta'
+                                        form={register('typeBicycle', optionErrorsForm.optTypeBicycle)}
                                     />
                                     <CustomInput
                                         label='Serial del marco'
                                         sx={styleSx.inputCustom}
+                                        form={register('serial', optionErrorsForm.optSerial)}
                                     />
                                 </>
                             ) : (
@@ -62,14 +67,20 @@ const RegisterVehicle = () => {
                                     <CustomInput
                                         sx={styleSx.inputCustom}
                                         label='Cilindraje'
+                                        disabled={!typeVehicle_id}
+                                        form={register('cylinderCapacity', optionErrorsForm.optCylinderCapacity)}
                                     />
                                     <CustomInput
                                         sx={styleSx.inputCustom}
-                                        label='Plade del Vehiculo'
+                                        label='Place del Vehiculo'
+                                        disabled={!typeVehicle_id}
+                                        form={register('carPlate', optionErrorsForm.optCarPlate)}
                                     />
                                     <CustomInput
                                         sx={styleSx.inputCustom}
                                         label='Modelo'
+                                        disabled={!typeVehicle_id}
+                                        form={register('model', optionErrorsForm.optModel)}
                                     />
                                 </>
                             )
@@ -80,10 +91,14 @@ const RegisterVehicle = () => {
                             <CustomInput
                                 sx={styleSx.inputCustom}
                                 label='Marca'
+                                disabled={!typeVehicle_id}
+                                form={register('brand', optionErrorsForm.optBrand)}
                             />
                             <CustomInput
                                 sx={styleSx.inputCustom}
                                 label='Color'
+                                disabled={!typeVehicle_id}
+                                form={register('color', optionErrorsForm.optColor)}
                             />
                         </>
                     </Box>
@@ -97,6 +112,7 @@ const RegisterVehicle = () => {
                                     description={item.description}
                                     handleFile={(e: ChangeEvent<HTMLInputElement>) => handleFile(e, item.id)}
                                     image={item.image}
+                                    type={!typeVehicle_id}
                                 />
                             </Box>
                         ))
@@ -105,14 +121,20 @@ const RegisterVehicle = () => {
                 <CustomInput
                     label="Observaciones"
                     multiline rows={4}
+                    disabled={!typeVehicle_id}
                     sx={{width: '100%', mt: 2}}
                 />
                 <CustomButton
                     variant='contained'
                     sx={styleSx.buttonCustom}
+                    disabled={!typeVehicle_id}
                     textValue='Enviar solicitud'
+                    type='submit'
                 />
             </form>
+            <Box sx={{display: 'flex', justifyContent: 'center'}}>
+                <ModalError  formValidate={optionsErrors} />
+            </Box>
         </Container>
     );
 };

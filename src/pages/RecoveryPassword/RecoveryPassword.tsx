@@ -2,10 +2,10 @@ import {Container, Typography} from '@mui/material';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
 import {styleFormRecovery, sxRecovery} from './RecoveryPassword.styles.ts';
-import {useFormRegister} from '../../hooks/useFormRegister.ts';
-import {useActionAuth} from '../../hooks/useActionAuth.ts';
+import {useFormRegister} from '../../hooks/useFormRegister/useFormRegister.ts';
+import {useActionAuth} from '../../hooks/useAuth/useActionAuth.ts';
 import {validateForm} from './ValidateForm.ts';
-import {useAppSelector} from '../../hooks/useAppRedux.ts';
+import {useAppSelector} from '../../hooks/useRedux/useAppRedux.ts';
 import {CustomSpinner} from '../../common/atoms/CustomSpinner.tsx';
 
 const RecoveryPassword = () => {

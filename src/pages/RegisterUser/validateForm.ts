@@ -64,7 +64,7 @@ const validateForm = (errors:FieldErrors):ErrorFormUser[] => {
         { key: 'phoneNumber', type: 'pattern'},
         { key: 'rol', type: 'required' },
     ];
-    console.log(errors);
+
     return errorList.map(error => ({
         key: error.key,
         hashError: errors[error.key]?.type === error.type,

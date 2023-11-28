@@ -2,7 +2,7 @@ import {Route, Routes} from 'react-router-dom';
 import {NotFound} from '../pages/NotFound/NotFound.tsx';
 import {QrImage} from '../common/molecules/QrImage/QrImage.tsx';
 import {RegisterVehicle} from '../pages/RegisterVehicle/RegisterVehicle.tsx';
-import {useAppSelector} from '../hooks/useAppRedux.ts';
+import {useAppSelector} from '../hooks/useRedux/useAppRedux.ts';
 import {routesUser} from '../utils/constants/routes.ts';
 
 const ProtectRoutesUsers = () => {
