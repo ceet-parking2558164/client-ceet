@@ -7,7 +7,7 @@ const listMenuAdmin:MenuUser[] = [
     {
         item: 'Movimientos',
         icon: <CustomItemIcon sx={{width: '100%'}} Icon={Dashboard} sxStyles={{fontSize: 40}}/>,
-        route: '/welcome-system/dashBoard'
+        route: `${routesGlobals.ROOT}/admin${routesAdmin.DASHBOARD}`
     },
     {
         item: 'Registrar usuarios',

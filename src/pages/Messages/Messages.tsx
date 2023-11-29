@@ -1,6 +1,6 @@
+import {SyntheticEvent, useState} from 'react';
 import {Box, Container, Tab, Tabs, Typography} from '@mui/material';
 import {Mail} from '@mui/icons-material';
-import {SyntheticEvent, useState} from 'react';
 import {CustomTabPanel} from '../../common/molecules/CustomTabPanel/CustomTabPanel.tsx';
 
 const Messages = () => {

@@ -15,7 +15,6 @@ const CustomTabPanel: FC<TabPanel> = (props) => {
                     </Box>
                 )
             }
-
         </div>
     );
 };

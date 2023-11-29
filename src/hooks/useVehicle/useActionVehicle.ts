@@ -1,7 +1,7 @@
 import {ChangeEvent, useState} from 'react';
+import {FieldValues, UseFormReset} from 'react-hook-form';
 import {ListItemCard} from '../../types/utils/constants/ListItemCard.ts';
 import {itemsCardImage} from '../../utils/constants/listItemsCard.ts';
-import {FieldValues, UseFormReset} from 'react-hook-form';
 import {registerVehicle} from '../../redux/actions/user/vehicle/thunk.ts';
 import {useAppSelector} from '../useRedux/useAppRedux.ts';
 import {ListOptionsVehicles} from '../../types/utils/constants/ListOptionsVehicles.ts';

@@ -1,7 +1,6 @@
+import {ChangeEvent} from 'react';
 import {Box, Container, Typography} from '@mui/material';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
-import {styleSx} from './RegisterVehicle.styles.ts';
-import {ChangeEvent} from 'react';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
 import {CardImageVehicle} from '../../components/CardImageVehicle/CardImageVehicle.tsx';
 import {useFormRegister} from '../../hooks/useFormRegister/useFormRegister.ts';
@@ -11,6 +10,7 @@ import {optionsVehicles} from '../../utils/constants/listOptionsVehicles.ts';
 import {validateFormVehicle, optionErrorsForm} from './validateForm.ts';
 import {ModalError} from '../../components/ModalError/ModalError.tsx';
 import {ListOptionsVehicles} from '../../types/utils/constants/ListOptionsVehicles.ts';
+import {styleSx} from './RegisterVehicle.styles.ts';
 
 const RegisterVehicle = () => {
 

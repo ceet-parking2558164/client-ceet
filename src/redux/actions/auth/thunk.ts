@@ -5,12 +5,7 @@ import {login, setLoading} from '../../reducer/auth.slice.ts';
 import {FieldValues} from 'react-hook-form';
 import {alertMessage} from '../../../utils/alert/AlertMessage.ts';
 import {Status} from '../../../types/utils/alert/AlertMessage.ts';
-
-interface ErrorCustom {
-    error: string
-    message: string
-    statusCode: number
-}
+import {ErrorCustom} from '../../../types/axios/ErrorMessage.ts';
 
 const authService = new AuthService();
 

@@ -10,5 +10,10 @@ interface Token {
 }
 
 
+interface  Users {
+    users: ResponseUser[] | null,
+    loading?: boolean
+}
 
-export type {InitialStateUser, Token};
+
+export type {InitialStateUser, Token, Users};

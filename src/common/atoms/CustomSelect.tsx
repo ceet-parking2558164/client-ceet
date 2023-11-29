@@ -1,7 +1,7 @@
+import {FC} from 'react';
+import {CustomSelectProps} from '../../types/common/atoms/CustomSelectProps.ts';
 import {FormControl, InputLabel, MenuItem, Select} from '@mui/material';
 
-import {CustomSelectProps} from '../../types/common/atoms/CustomSelectProps.ts';
-import {FC} from 'react';
 
 const CustomSelect:FC<CustomSelectProps> = (props) => {
 

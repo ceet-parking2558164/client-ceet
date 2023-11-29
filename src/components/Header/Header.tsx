@@ -1,6 +1,6 @@
 import {MouseEvent, useState} from 'react';
-import {Avatar, Badge, Box, Hidden, Typography} from '@mui/material';
 import {Link} from 'react-router-dom';
+import {Avatar, Badge, Box, Hidden, Typography} from '@mui/material';
 import {Home, Mail, Menu} from '@mui/icons-material';
 import {CustomIcon} from '../../common/atoms/CustomIcon.tsx';
 import {routesGlobals, routesPublics} from '../../utils/constants/routes.ts';

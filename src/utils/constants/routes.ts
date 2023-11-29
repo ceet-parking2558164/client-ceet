@@ -19,6 +19,8 @@ const routesUser:RoutesUser = {
 };
 const routesAdmin:RoutesAdmin = {
     REGISTER_USER: '/register-user',
+    DASHBOARD: '/dashboard',
+    USERS: '/all-users'
 };
 export {
     routesPublics,

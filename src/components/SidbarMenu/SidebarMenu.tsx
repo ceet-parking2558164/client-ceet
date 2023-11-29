@@ -1,5 +1,5 @@
-import {Box, Hidden} from '@mui/material';
 import {FC} from 'react';
+import {Box, Hidden} from '@mui/material';
 import {ChildrenProps} from '../../types/containers/children/ChildrenProps.ts';
 import {styleContainer} from './SidebarMenu.styles.ts';
 import {theme} from '../../theme/theme.ts';

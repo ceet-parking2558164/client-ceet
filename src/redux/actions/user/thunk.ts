@@ -4,13 +4,10 @@ import {setLoading, updateUser, userAct} from '../../reducer/auth.slice.ts';
 import {alertMessage} from '../../../utils/alert/AlertMessage.ts';
 import {Status} from '../../../types/utils/alert/AlertMessage.ts';
 import axios from 'axios';
+import {ErrorCustom} from '../../../types/axios/ErrorMessage.ts';
 
 const userService = new UserService();
-interface ErrorCustom {
-    error: string
-    message: string
-    statusCode: number
-}
+
 
 const getUserToken = (token: string) => {
     return async function (dispatch: AppDispatch) {

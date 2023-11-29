@@ -2,13 +2,10 @@ import {VehicleService} from '../../../../services/Vehicle.service.ts';
 import {alertMessage} from '../../../../utils/alert/AlertMessage.ts';
 import {Status} from '../../../../types/utils/alert/AlertMessage.ts';
 import {isAxiosError} from 'axios';
+import {ErrorCustom} from '../../../../types/axios/ErrorMessage.ts';
 
 const vehicleService = new VehicleService();
-interface ErrorCustom {
-    error: string
-    message: string
-    statusCode: number
-}
+
 
 const registerVehicle = async (data:FormData) => {
     try {

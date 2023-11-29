@@ -16,7 +16,9 @@ const ModalError:FC<ModalErrorProps> = ({formValidate}) => {
                             {
                                 formValidate.map(error => (
                                     error.hashError && (
-                                        <Typography key={error.key} sx={{color: '#000000'}}>{error.message}</Typography>
+                                        <Typography key={error.key} sx={{color: '#000000'}}>
+                                            {typeof error.message === 'string' && error.message}
+                                        </Typography>
                                     )
                                 ))
                             }

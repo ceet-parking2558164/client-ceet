@@ -13,6 +13,8 @@ interface RoutesGlobals {
 
 interface RoutesAdmin {
     REGISTER_USER: string
+    DASHBOARD: string,
+    USERS: string
 }
 
 interface RoutesUser {

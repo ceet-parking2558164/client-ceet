@@ -1,8 +1,9 @@
+import {FC, useRef} from 'react';
 import {Box, Typography} from '@mui/material';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
 import {styleImage, styleSx} from './CardImageVehicle.styles.ts';
 import {CardImageVehicleProps} from '../../types/components/CardImageVehicle.ts';
-import {FC, useRef} from 'react';
+
 
 const CardImageVehicle: FC<CardImageVehicleProps> = (props) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
