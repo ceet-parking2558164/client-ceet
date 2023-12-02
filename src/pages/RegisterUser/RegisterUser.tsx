@@ -1,5 +1,4 @@
 import {Box, Container, Typography} from '@mui/material';
-import {FieldValues} from 'react-hook-form';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {CustomSelect} from '../../common/atoms/CustomSelect.tsx';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
@@ -7,6 +6,7 @@ import {useFormRegister} from '../../hooks/useFormRegister/useFormRegister.ts';
 import {styleFormUser, styleSx} from './RegisterUser.styles.ts';
 import {validateForm, optionsLabelErrors} from './validateForm.ts';
 import {ModalError} from '../../components/ModalError/ModalError.tsx';
+import {useRegisterUser} from '../../hooks/useRegisterUser/useRegisterUser.ts';
 
 const RegisterUser = () => {
 
@@ -15,21 +15,17 @@ const RegisterUser = () => {
         handleSubmit,
         watch,
         formState: {errors},
+        reset,
         setValue
     } = useFormRegister();
 
     const {rol, documentType} = watch();
-
-    const handlePrueba = (data: FieldValues) => {
-        console.log(data);
-
-    };
-
+    const {handleRegister} = useRegisterUser(reset);
     const errorsForm = validateForm(errors);
 
     return (
         <Container maxWidth='md' sx={{mt: 5}}>
-            <form style={styleFormUser} onSubmit={handleSubmit(handlePrueba)}>
+            <form style={styleFormUser} onSubmit={handleSubmit(handleRegister)}>
                 <Typography variant='h5' sx={{textAlign: 'center'}}>Registrar usuario</Typography>
                 <Box sx={{display: 'flex', gap: 2}}>
                     <Box>

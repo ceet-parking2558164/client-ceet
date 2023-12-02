@@ -1,4 +1,4 @@
-import {parkingApi} from '../api/parkingApi.ts';
+import {parkingApi} from '../../api/parkingApi.ts';
 import {FieldValues} from 'react-hook-form';
 
 class AuthService {

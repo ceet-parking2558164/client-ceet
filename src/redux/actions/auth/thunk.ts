@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {AuthService} from '../../../services/Auth.service.ts';
+import {AuthService} from '../../../services/auth/Auth.service.ts';
 import {AppDispatch} from '../../store/store.ts';
 import {login, setLoading} from '../../reducer/auth.slice.ts';
 import {FieldValues} from 'react-hook-form';

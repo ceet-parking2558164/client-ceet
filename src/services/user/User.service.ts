@@ -1,5 +1,5 @@
-import {parkingApi} from '../api/parkingApi.ts';
-import {getAccessToken} from '../utils/auth/localStorage.ts';
+import {parkingApi} from '../../api/parkingApi.ts';
+import {getAccessToken} from '../../utils/auth/localStorage.ts';
 
 
 class UserService {
