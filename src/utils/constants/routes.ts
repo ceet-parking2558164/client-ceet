@@ -10,7 +10,8 @@ const routesPublics:RoutesApp = {
 const routesGlobals:RoutesGlobals = {
     ROOT: '/welcome-system',
     PROFILE: 'profile',
-    MESSAGE: 'message'
+    CHAT: 'chats',
+    MESSAGE: 'messages'
 };
 
 const routesUser:RoutesUser = {
@@ -20,7 +21,8 @@ const routesUser:RoutesUser = {
 const routesAdmin:RoutesAdmin = {
     REGISTER_USER: '/register-user',
     DASHBOARD: '/dashboard',
-    USERS: '/all-users'
+    USERS: '/all-users',
+    REQUEST: '/request'
 };
 export {
     routesPublics,

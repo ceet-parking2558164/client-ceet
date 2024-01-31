@@ -1,8 +1,12 @@
 import {PayloadAction} from '@reduxjs/toolkit';
-import {Message, MessageUser} from '../../../types/pages/Message/Message.ts';
+import {Message, MessageUser, TotalMessages} from '../../../types/pages/Message/Message.ts';
 
 const getMessagesAction = (state:Message, action:PayloadAction<MessageUser[]>) => {
-    state.message = action.payload;
+    state.messages = action.payload;
 };
 
-export {getMessagesAction};
+const totalMessagesAction = (state:Message, action:PayloadAction<TotalMessages>) => {
+    state.total = action.payload.total;
+};
+
+export {getMessagesAction, totalMessagesAction};

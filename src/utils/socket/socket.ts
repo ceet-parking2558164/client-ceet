@@ -1,6 +1,6 @@
-import io from 'socket.io-client';
+import io, {Socket} from 'socket.io-client';
 
-let socket = null;
+let socket: null | Socket = null;
 
 const initSocket = () => {
     socket = io('http://localhost:3000');

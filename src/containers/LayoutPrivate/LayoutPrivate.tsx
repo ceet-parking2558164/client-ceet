@@ -8,7 +8,6 @@ import {ChildrenProps} from '../../types/containers/children/ChildrenProps.ts';
 
 interface Interface extends ListUser, ChildrenProps {
 }
-
 const LayoutPrivate: FC<Interface> = ({list, children}) => {
 
     return (

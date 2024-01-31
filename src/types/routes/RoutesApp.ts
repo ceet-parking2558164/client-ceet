@@ -8,13 +8,15 @@ interface RoutesApp {
 interface RoutesGlobals {
     ROOT: string,
     PROFILE: string,
+    CHAT: string,
     MESSAGE: string
 }
 
 interface RoutesAdmin {
     REGISTER_USER: string
     DASHBOARD: string,
-    USERS: string
+    USERS: string,
+    REQUEST: string
 }
 
 interface RoutesUser {

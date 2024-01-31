@@ -1,13 +1,13 @@
-import {ElementType} from 'react';
+import React from 'react';
 import {IconButtonProps, SxProps, Theme, ListItemIconProps} from '@mui/material';
 
 interface CustomIconProps extends IconButtonProps{
-    Icon: ElementType
+    Icon: React.ElementType
     sxStyles?: SxProps<Theme>
 }
 
 interface ItemList extends ListItemIconProps{
-    Icon: ElementType
+    Icon: React.ElementType
     sxStyles?: SxProps<Theme>
 }
 

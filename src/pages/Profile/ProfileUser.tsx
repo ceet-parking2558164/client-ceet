@@ -101,7 +101,6 @@ const ProfileUser = () => {
                     />
                 </Box>
             </form>
-
         </Container>
     );
 };

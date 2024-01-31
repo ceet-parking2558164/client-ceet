@@ -13,6 +13,8 @@ const useActionVehicle = (idType:ListOptionsVehicles|undefined, reset:UseFormRes
     const [selectImage, setSelectImage] = useState<ListItemCard[]>(itemsCardImage);
     const [imagesFormData, setImagesFormData] = useState<File[]>([]);
 
+    const [loading, setLoading] = useState<boolean>(false);
+
     const handleFile = (event: ChangeEvent<HTMLInputElement>, id: number) => {
         if (event.target.files) {
             const imgSelect = event.target.files[0];
@@ -47,14 +49,18 @@ const useActionVehicle = (idType:ListOptionsVehicles|undefined, reset:UseFormRes
         imagesFormData.forEach(image => {
             formData.append('images', image);
         });
-        await registerVehicle(formData);
-        reset();
+        setLoading(true);
+        registerVehicle(formData).then(() => {
+            setLoading(false);
+        });
+        // reset();
     };
 
     return {
         selectImage,
         handleSendForm,
-        handleFile
+        handleFile,
+        loading
     };
 };
 

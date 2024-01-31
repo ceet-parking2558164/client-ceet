@@ -1,9 +1,9 @@
 import {ListOptionsVehicles} from '../../types/utils/constants/ListOptionsVehicles.ts';
 
 const optionsVehicles:ListOptionsVehicles[] = [
-    {id: '4c35ed97-73c5-4982-819c-3137327e796d', type: 'Bicicleta'},
-    {id: '9d69e201-fa22-48c6-b17b-3f86d286cb62', type: 'Carro'},
-    {id: '50a56748-7c38-4643-9a61-54a08eb8ad33', type: 'Motocicleta'}
+    {id: '7dfc9bbc-abf5-4a47-aa2b-b7e3e072d90d', type: 'Bicicleta'},
+    {id: '66fed1a1-d6e7-40c0-b62c-c54774d8ddb1', type: 'Carro'},
+    {id: 'fe0394cd-b8a5-4504-b6f6-448a980460b8', type: 'Motocicleta'}
 ];
 
 export {optionsVehicles};

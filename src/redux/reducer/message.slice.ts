@@ -1,18 +1,20 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {Message} from '../../types/pages/Message/Message.ts';
-import {getMessagesAction} from '../actions/message/message.action.ts';
+import {getMessagesAction, totalMessagesAction} from '../actions/message/message.action.ts';
 
 const initialState:Message = {
-    message: []
+    messages: [],
+    total: 0
 };
 
 const messageSlice = createSlice({
-   name: 'message',
+   name: 'messages',
    initialState,
    reducers:{
-       getAllMessage: getMessagesAction
+       getAllMessage: getMessagesAction,
+       totalMessages: totalMessagesAction
    }
 });
 
-export const {getAllMessage} = messageSlice.actions;
+export const {getAllMessage, totalMessages} = messageSlice.actions;
 export {messageSlice};

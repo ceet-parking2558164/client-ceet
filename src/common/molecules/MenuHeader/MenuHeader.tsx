@@ -37,7 +37,7 @@ const MenuHeader: FC<MenuProps> = (props) => {
             }}
             onClose={handleClose}
         >
-            <Link to={`${routesGlobals.ROOT}/admin${routesGlobals.PROFILE}`}
+            <Link to={`${routesGlobals.ROOT}/${routesGlobals.PROFILE}`}
                   style={{textDecoration: 'none', color: 'black'}}>
                 <MenuItem onClick={handleClose}>Perfil</MenuItem>
             </Link>

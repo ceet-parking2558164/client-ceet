@@ -8,8 +8,8 @@ import {RoutesPublic} from './RoutesPublics.tsx';
 import {routesGlobals} from '../utils/constants/routes.ts';
 import {Welcome} from '../pages/Welcome/Welcome.tsx';
 import {ProfileUser} from '../pages/Profile/ProfileUser.tsx';
-import {Messages} from '../pages/Messages/Messages.tsx';
-
+import {Chats} from '../pages/Chats/Chats.tsx';
+import {Message} from '../pages/Message/Message.tsx';
 
 function App() {
     return (
@@ -20,7 +20,8 @@ function App() {
                 <Route path={routesGlobals.ROOT} element={<ProtectRoutes/>}>
                     <Route index element={<Welcome />} />
                     <Route path={routesGlobals.PROFILE} element={<ProfileUser />} />
-                    <Route path={routesGlobals.MESSAGE} element={<Messages/>}/>
+                    <Route path={routesGlobals.CHAT} element={<Chats/>}/>
+                    <Route path={`${routesGlobals.MESSAGE}/:chatId`} element={<Message />} />
                     <Route path={`${routesGlobals.ROOT}/user/*`} element={<ProtectRoutesUsers/>}/>
                     <Route path={`${routesGlobals.ROOT}/admin/*`} element={<ProtectRoutesAdmin/>}/>
                 </Route>

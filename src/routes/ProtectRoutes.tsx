@@ -4,7 +4,7 @@ import {useAppDispatch, useAppSelector} from '../hooks/useRedux/useAppRedux.ts';
 import {useEffect} from 'react';
 import {getAccessToken} from '../utils/auth/localStorage.ts';
 import {getUserToken} from '../redux/actions/user/thunk.ts';
-import {initSocket} from '../utils/socket/socket.ts';
+import {initSocket, socket} from '../utils/socket/socket.ts';
 import {CustomSpinner} from '../common/atoms/CustomSpinner.tsx';
 import {listMenuAdmin} from '../utils/menu/MemuAdmin.tsx';
 import {LayoutPrivate} from '../containers/LayoutPrivate/LayoutPrivate.tsx';
@@ -13,8 +13,6 @@ import {listMenuUser} from '../utils/menu/MenuUser.tsx';
 interface Interface {
     token: string
 }
-
-initSocket();
 
 const ProtectRoutes = () => {
 
@@ -25,9 +23,16 @@ const ProtectRoutes = () => {
         const token:Interface = getAccessToken('token');
         if(token){
             dispatch(getUserToken((token.token)));
+            initSocket();
         }
         // eslint-disable-next-line
     }, []);
+    useEffect(() => {
+        if (user && socket){
+            socket.emit('subscribe', user.rol);
+        }
+
+    }, [dispatch, user]);
 
     const token:Interface = getAccessToken('token');
     if (!token){

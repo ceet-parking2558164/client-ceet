@@ -10,9 +10,14 @@ type MessageUser = {
     updatedAt?: string
     user_id?: string
 }
-
+interface TotalMessages {
+    total: number
+}
 interface Message {
-    message: MessageUser[]
+    messages: MessageUser[]
+    total: number
 }
 
-export type {Message, MessageUser};
+
+
+export type {Message, MessageUser, TotalMessages};

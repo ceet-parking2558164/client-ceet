@@ -7,8 +7,7 @@ class UserService {
         const data = {
             token : token
         };
-        const user= await parkingApi.post('user/get-user', data);
-        return user;
+        return await parkingApi.post('user/get-user', data);
     }
 
     async updateUser(payload:FormData){

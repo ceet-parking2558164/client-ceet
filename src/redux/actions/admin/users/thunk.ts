@@ -26,7 +26,6 @@ const deleteUserThunk = async(idUser:string) => {
     try {
         const response = await userAdminService.deleteUserById(idUser);
         if (response.status === 200){
-            console.log(response.data);
             alertMessage(response.data, Status.success);
         }
 

@@ -1,3 +1,4 @@
+
 import {UserService} from '../../../services/user/User.service.ts';
 import {AppDispatch} from '../../store/store.ts';
 import {setLoading, updateUser, userAct} from '../../reducer/auth.slice.ts';
@@ -5,6 +6,7 @@ import {alertMessage} from '../../../utils/alert/AlertMessage.ts';
 import {Status} from '../../../types/utils/alert/AlertMessage.ts';
 import axios from 'axios';
 import {ErrorCustom} from '../../../types/axios/ErrorMessage.ts';
+import {removeData} from '../../../utils/auth/localStorage.ts';
 
 const userService = new UserService();
 
@@ -20,6 +22,9 @@ const getUserToken = (token: string) => {
             }
         } catch (e) {
             console.error(e);
+            if (axios.isAxiosError(e)){
+                removeData('token');
+            }
             dispatch(setLoading(false));
         }
     };

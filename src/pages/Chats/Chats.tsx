@@ -2,15 +2,16 @@ import {SyntheticEvent, useEffect, useState} from 'react';
 import {Box, Container, Tab, Tabs, Typography} from '@mui/material';
 import {Mail} from '@mui/icons-material';
 import {CustomTabPanel} from '../../common/molecules/CustomTabPanel/CustomTabPanel.tsx';
-import {CardMessage} from '../../components/CardMessage/CardMessage.tsx';
-import {getMessagesThunk} from '../../redux/actions/message/MessageThunk.ts';
+import {CardChat} from '../../components/CardChat/CardChat.tsx';
 import {useAppDispatch, useAppSelector} from '../../hooks/useRedux/useAppRedux.ts';
+import {getAllChatThunk} from '../../redux/actions/chat/chatThunk.ts';
+import {FormSendMessage} from '../../components/FormSendMessage/FormSendMessage.tsx';
 
-const Messages = () => {
+const Chats = () => {
 
     const dispatch = useAppDispatch();
 
-    const {message} = useAppSelector(state => state.messages);
+    const {chats} = useAppSelector(state => state.chats);
 
     const {user} = useAppSelector(state => state.auth);
 
@@ -20,7 +21,7 @@ const Messages = () => {
     };
 
     useEffect(() => {
-        dispatch(getMessagesThunk());
+        dispatch(getAllChatThunk());
     }, [dispatch]);
 
     return (
@@ -39,20 +40,18 @@ const Messages = () => {
                 </Box>
                 <CustomTabPanel value={value} index={0}>
                     {
-                        message.map(msg => (
-                            <>
+                        chats.map(chat => (
+                            <div key={chat.chat_id} style={{width: '100%', border: 1, backgroundColor: 'rgba(239,239,239,0.85)'}}>
                                 {
-                                    user?.rol === 'Administrador' && msg.type === 'Registro' && (
-                                        <CardMessage
-                                            key={msg.message_id}
-                                            User={msg.User}
-                                            type={msg.type}
-                                            message={msg.message}
-                                            createdAt={msg.createdAt}
+                                    user?.rol === 'Administrador' && (
+                                        <CardChat
+                                            userId={chat.userId}
+                                            chat_id={chat.chat_id}
+                                            createdAt={chat.createdAt}
                                         />
                                     )
                                 }
-                            </>
+                            </div>
                         ))
                     }
                 </CustomTabPanel>
@@ -60,11 +59,11 @@ const Messages = () => {
                     hola 2
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={2}>
-                    hola 3
+                    <FormSendMessage />
                 </CustomTabPanel>
             </Box>
         </Container>
     );
 };
 
-export {Messages};
+export {Chats};
