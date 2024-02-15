@@ -3,7 +3,7 @@ import {UseFormRegisterReturn} from 'react-hook-form';
 
 interface CustomSelectProps extends SelectProps{
     options: string[],
-    form: UseFormRegisterReturn
+    form?: UseFormRegisterReturn
 }
 
 export type {CustomSelectProps};

@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import {Box, Container, Typography} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import {LoadingButton} from '@mui/lab';
 import {Lock, MeetingRoom} from '@mui/icons-material';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
@@ -32,8 +32,8 @@ const LoginForm = () => {
 
 
     return (
-        <Container maxWidth='sm' sx={{mt: 20}}>
-            <div style={{position: 'relative'}}>
+        <Box  sx={{display: 'flex', minHeight: 'calc(100vh - 96px);',justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{position: 'relative', width: '30%'}}>
                 <div style={styleFormLogin.divEffect}></div>
                 <form style={styleFormLogin.formContainer} onSubmit={handleSubmit(handleLogin)}>
                     <Box sx={{display: 'flex', justifyContent: 'center'}}>
@@ -78,7 +78,8 @@ const LoginForm = () => {
                     </Link>
                 </form>
             </div>
-        </Container>
+
+        </Box>
     );
 };
 

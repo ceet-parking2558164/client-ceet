@@ -5,7 +5,9 @@ import {useAppSelector} from '../hooks/useRedux/useAppRedux.ts';
 import {routesAdmin} from '../utils/constants/routes.ts';
 import {DashBoard} from '../pages/DashBoard/DashBoard.tsx';
 import {Users} from '../pages/Users/Users.tsx';
-import {RequestVehicle} from '../pages/RequestVehicle/RequestVehicle.tsx';
+import {DetailRequestUser} from '../pages/DetailRequest/DetailRequestUser.tsx';
+import {ListVehicles} from '../pages/ListVehicles/ListVehicles.tsx';
+import {ListRequest} from '../pages/ListRequest/ListRequest.tsx';
 
 
 const ProtectRoutesAdmin = () => {
@@ -19,7 +21,9 @@ const ProtectRoutesAdmin = () => {
                         <Route path={routesAdmin.REGISTER_USER} element={<RegisterUser />} />
                         <Route path={routesAdmin.DASHBOARD} element={<DashBoard />} />
                         <Route path={routesAdmin.USERS} element={<Users />} />
-                        <Route path={`${routesAdmin.REQUEST}/:userId`} element={<RequestVehicle />} />
+                        <Route path={routesAdmin.VEHICLES} element={<ListVehicles />}/>
+                        <Route path={routesAdmin.REQUEST} element={<ListRequest />} />
+                        <Route path={`${routesAdmin.REQUEST}/:userId`} element={<DetailRequestUser />} />
                     </Routes>
                 ):<NotFound />
             }

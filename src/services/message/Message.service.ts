@@ -15,7 +15,22 @@ class MessageService {
             }
         });
     }
-
+    async getMessagesIsRead(){
+        const token = getAccessToken('token');
+        return await parkingApi.get('/message/msg_is_read', {
+            headers: {
+                Authorization: `Bearer ${token.token}`,
+            }
+        });
+    }
+    async updateMessage(chatId:string){
+        const token = getAccessToken('token');
+        return await parkingApi.put(`/message/read/${chatId}`, {}, {
+            headers: {
+                Authorization: `Bearer ${token.token}`,
+            }
+        });
+    }
     async totalMessages(){
         return await parkingApi.get('message/total',{
             headers: {

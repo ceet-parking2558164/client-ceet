@@ -7,8 +7,27 @@ class RequestService {
     constructor() {
         this.tokenAccess = getAccessToken('token');
     }
+
+    async getAllRequests(){
+        const token = this.tokenAccess;
+        return await parkingApi.get('request/all', {
+            headers: {
+                Authorization: `Bearer ${token.token}`,
+            }
+        });
+    }
+
+    async updateRequest(reqId:string, data:{status: string}){
+        const token = this.tokenAccess;
+        return await parkingApi.put(`request/update-request/${reqId}`, data, {
+            headers: {
+                Authorization: `Bearer ${token.token}`,
+            }
+        });
+    }
     async getDetailRequestUser(userId:string){
         const token = this.tokenAccess;
+        console.log(token);
         return await parkingApi.get(`request/pending/${userId}`, {
             headers: {
                 Authorization: `Bearer ${token.token}`,

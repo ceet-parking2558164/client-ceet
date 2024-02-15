@@ -22,6 +22,7 @@ const routesAdmin:RoutesAdmin = {
     REGISTER_USER: '/register-user',
     DASHBOARD: '/dashboard',
     USERS: '/all-users',
+    VEHICLES: '/all-vehicles',
     REQUEST: '/request'
 };
 export {

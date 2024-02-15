@@ -10,9 +10,9 @@ interface ResponseUser {
 }
 
 interface User extends ResponseUser{
-    password: string,
-    documentType: string,
-    numberDocument: string,
+    password?: string,
+    documentType?: string,
+    numberDocument?: string,
 }
 
 export type {User, ResponseUser};

@@ -12,7 +12,9 @@ interface Token {
 
 interface  Users {
     users: ResponseUser[] | null,
-    loading?: boolean
+    copyUsers: ResponseUser[] | null | undefined,
+    loading?: boolean,
+    selectRole: string
 }
 
 

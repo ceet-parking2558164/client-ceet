@@ -1,4 +1,4 @@
-import {AppDispatch} from '../../store/store.ts';
+import {AppDispatch} from '../../store/typeState.ts';
 import {ChatService} from '../../../services/chat/Chat.service.ts';
 import {deleteChat, getChats} from '../../reducer/chat.slice.ts';
 import axios from 'axios';

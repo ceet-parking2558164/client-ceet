@@ -16,7 +16,8 @@ interface RoutesAdmin {
     REGISTER_USER: string
     DASHBOARD: string,
     USERS: string,
-    REQUEST: string
+    REQUEST: string,
+    VEHICLES: string
 }
 
 interface RoutesUser {

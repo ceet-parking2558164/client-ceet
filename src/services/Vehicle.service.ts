@@ -10,6 +10,23 @@ class VehicleService {
             }
         });
     }
+
+    async getAllVehicles(){
+        const token = getAccessToken('token');
+        return await parkingApi.get('vehicle/all', {
+            headers: {
+                Authorization: `Bearer ${token.token}`
+            }
+        });
+    }
+    async deleteVehicle(vehicleId:string){
+        const token = getAccessToken('token');
+        return await parkingApi.delete(`vehicle/delete-register/${vehicleId}`, {
+            headers: {
+                Authorization: `Bearer ${token.token}`
+            }
+        });
+    }
 }
 
 export {VehicleService};

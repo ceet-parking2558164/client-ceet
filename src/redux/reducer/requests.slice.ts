@@ -1,10 +1,11 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {InitialStateRequest, RequestVehicle} from '../../types/redux/initialStateRequest.ts';
-import {getDetailReqVehicleAction} from '../actions/request/request.action.ts';
+import {getAllRequestsAction, getDetailReqVehicleAction} from '../actions/request/request.action.ts';
 
 
 const initialState:InitialStateRequest = {
-    requests: {} as RequestVehicle
+    detail_request: {} as RequestVehicle,
+    requests: []
 };
 
 
@@ -12,9 +13,10 @@ const requestSlice = createSlice({
     name: 'request',
     initialState,
     reducers: {
-        detailRequestUser: getDetailReqVehicleAction
+        detailRequestUser: getDetailReqVehicleAction,
+        getAllRequestsSlice: getAllRequestsAction
     }
 });
 
-export const {detailRequestUser} = requestSlice.actions;
+export const {detailRequestUser, getAllRequestsSlice} = requestSlice.actions;
 export {requestSlice};

@@ -7,6 +7,9 @@ import {getMessagesThunk} from '../../redux/actions/message/MessageThunk.ts';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {CustomButton} from '../../common/atoms/CustomButton.tsx';
 import {routesAdmin, routesGlobals} from '../../utils/constants/routes.ts';
+import {MessageService} from '../../services/message/Message.service.ts';
+
+const messageService = new MessageService();
 
 const Message = () => {
 
@@ -15,6 +18,13 @@ const Message = () => {
     const dispatch = useAppDispatch();
 
     const {messages} = useAppSelector(state => state.messages);
+    useEffect(() => {
+        (async () =>{
+            if (chatId){
+                await messageService.updateMessage(chatId);
+            }
+        })();
+    }, [chatId]);
 
 
     useEffect(() => {

@@ -11,20 +11,18 @@ import {useAppSelector} from '../../hooks/useRedux/useAppRedux.ts';
 import {MenuHeader} from '../../common/molecules/MenuHeader/MenuHeader.tsx';
 import {socket} from '../../utils/socket/socket.ts';
 
-
 const Header = () => {
 
     const userAuth = useAppSelector(state => state.auth.user);
-
+    const [msgIsRead, setMsgIsRead] = useState<number>(0);
     const [anchorMenu, setAnchorMenu] = useState<null | HTMLElement>(null);
     const handleMenu = (e: MouseEvent<HTMLElement>) => {
         setAnchorMenu(e.currentTarget);
     };
 
     useEffect(() => {
-
         socket?.on('notify', (num) => {
-            console.log(num);
+            setMsgIsRead(num);
         });
     }, [socket]);
 
@@ -51,7 +49,7 @@ const Header = () => {
                                     <CustomIcon Icon={Home} sxStyles={styleGlobal.iconsHome}/>
                                 </Link>
                                 <Link to={`${routesGlobals.ROOT}/${routesGlobals.CHAT}`}>
-                                    <Badge badgeContent={0}  color='secondary' sx={styleGlobal.styleBadge}>
+                                    <Badge badgeContent={msgIsRead}  color='secondary' sx={styleGlobal.styleBadge}>
                                         <CustomIcon Icon={Mail} sxStyles={styleGlobal.iconsMail}/>
                                     </Badge>
                                 </Link>

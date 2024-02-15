@@ -10,6 +10,7 @@ import {Welcome} from '../pages/Welcome/Welcome.tsx';
 import {ProfileUser} from '../pages/Profile/ProfileUser.tsx';
 import {Chats} from '../pages/Chats/Chats.tsx';
 import {Message} from '../pages/Message/Message.tsx';
+import {ProtectRoutesSecurity} from './ProtectRoutesSecurity.tsx';
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path={`${routesGlobals.MESSAGE}/:chatId`} element={<Message />} />
                     <Route path={`${routesGlobals.ROOT}/user/*`} element={<ProtectRoutesUsers/>}/>
                     <Route path={`${routesGlobals.ROOT}/admin/*`} element={<ProtectRoutesAdmin/>}/>
+                    <Route path={`${routesGlobals.ROOT}/security/*`} element={<ProtectRoutesSecurity />} />
                 </Route>
             </RoutesNotFound>
         </BrowserRouter>

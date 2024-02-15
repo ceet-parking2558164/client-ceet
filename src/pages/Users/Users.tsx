@@ -10,7 +10,7 @@ const Users = () => {
 
     const dispatch = useAppDispatch();
 
-    const {users} = useAppSelector(state => state.allUsers);
+    const {copyUsers} = useAppSelector(state => state.allUsers);
 
     useEffect(() => {
         dispatch(getAllUserThunk());
@@ -25,20 +25,20 @@ const Users = () => {
 
     return (
         <>
-            <NavBarUser />
+            <NavBarUser listOpc={['Usuario', 'Seguridad']} nameBar='Usuarios' />
             <TableContainer sx={{ maxHeight: 500 }}>
                 <Table>
                     <TableHead>
                         <TableRow>
                             <TableCell >Imagen</TableCell>
                             <TableCell align="right">Nombre Completo</TableCell>
-                            <TableCell align="right">Estado</TableCell>
-                            <TableCell align="right">Numero de documento</TableCell>
+                            <TableCell align="right">Role</TableCell>
+                            <TableCell align="right">Numero de Celular</TableCell>
                             <TableCell align="right">Eliminar</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {users?.map((row) => (
+                        {copyUsers?.map((row) => (
                             <TableRow
                                 key={row.user_id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

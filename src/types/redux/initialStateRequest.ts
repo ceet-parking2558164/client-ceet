@@ -15,10 +15,10 @@ interface RequestVehicle {
         carPlate: string,
         cylinderCapacity: string,
         color: string,
-        typeBicycle: null,
+        typeBicycle: null | string,
         images: string[],
         brand: string,
-        serial: null,
+        serial: null | string,
         createdAt: string,
         updatedAt: string,
         user_id: string,
@@ -27,7 +27,10 @@ interface RequestVehicle {
 }
 
 interface InitialStateRequest {
-    requests: RequestVehicle
+    detail_request: RequestVehicle
+    requests: RequestVehicle[]
 }
 
 export type {InitialStateRequest, RequestVehicle};
+
+

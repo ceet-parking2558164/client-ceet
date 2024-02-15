@@ -1,6 +1,5 @@
-
 import {UserService} from '../../../services/user/User.service.ts';
-import {AppDispatch} from '../../store/store.ts';
+import {AppDispatch} from '../../store/typeState.ts';
 import {setLoading, updateUser, userAct} from '../../reducer/auth.slice.ts';
 import {alertMessage} from '../../../utils/alert/AlertMessage.ts';
 import {Status} from '../../../types/utils/alert/AlertMessage.ts';

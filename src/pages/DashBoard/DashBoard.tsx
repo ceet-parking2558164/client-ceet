@@ -10,24 +10,28 @@ const DashBoard = () => {
                 <Link to={`${routesGlobals.ROOT}/admin${routesAdmin.USERS}`}>
                     <CustomButton
                         variant='contained'
-                        textValue='Ver usuarios registrados'
+                        textValue='Usuarios registrados'
                         sx={{width: '100%'}}
                     />
                 </Link>
             </Grid>
             <Grid item xs={6} md={4} >
-                <CustomButton
-                    variant='contained'
-                    textValue='Ver Vehiculos registrados'
-                    sx={{width: '100%'}}
-                />
+                <Link to={`${routesGlobals.ROOT}/admin${routesAdmin.VEHICLES}`}>
+                    <CustomButton
+                        variant='contained'
+                        textValue='Vehiculos registrados'
+                        sx={{width: '100%'}}
+                    />
+                </Link>
             </Grid>
             <Grid item xs={6} md={4} >
-                <CustomButton
-                    variant='contained'
-                    textValue='BUscar usuario registrado'
-                    sx={{width: '100%'}}
-                />
+                <Link to={`${routesGlobals.ROOT}/admin${routesAdmin.REQUEST}`}>
+                    <CustomButton
+                        variant='contained'
+                        textValue='Solicitudes'
+                        sx={{width: '100%'}}
+                    />
+                </Link>
             </Grid>
             <Grid item xs={6} md={4}>
                 <CustomButton

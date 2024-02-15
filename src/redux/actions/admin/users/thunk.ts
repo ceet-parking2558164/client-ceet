@@ -1,6 +1,6 @@
 import {isAxiosError} from 'axios';
 import {UserAdminService} from '../../../../services/admin/UserAdmin.service.ts';
-import {AppDispatch} from '../../../store/store.ts';
+import {AppDispatch} from '../../../store/typeState.ts';
 import {getAllUsers} from '../../../reducer/user.slice.ts';
 import {alertMessage} from '../../../../utils/alert/AlertMessage.ts';
 import {Status} from '../../../../types/utils/alert/AlertMessage.ts';

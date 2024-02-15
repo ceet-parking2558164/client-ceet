@@ -17,6 +17,17 @@ const getMessagesThunk = (chatId:string) => {
     };
 };
 
+const getMessagesIsRead = async() => {
+    try {
+        const response  = await messageMessage.getMessagesIsRead();
+        if (response.status){
+            return response.data;
+        }
+    }catch (e) {
+        console.error(e);
+    }
+};
+
 const getTotalMessagesThunk = () => {
     return async function (dispatch:AppDispatch){
         try {
@@ -30,4 +41,4 @@ const getTotalMessagesThunk = () => {
     };
 };
 
-export {getMessagesThunk, getTotalMessagesThunk};
+export {getMessagesThunk, getTotalMessagesThunk, getMessagesIsRead};

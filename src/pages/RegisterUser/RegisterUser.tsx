@@ -80,7 +80,7 @@ const RegisterUser = () => {
                         />
                         <CustomSelect
                             label='Role del usuario'
-                            options={['Usuario', 'Seguridad', 'Administrador']}
+                            options={['Usuario', 'Guarda de seguridad', 'Administrador']}
                             error={!!errorsForm.some(err => err.hashError && err.key === 'rol')}
                             value={rol || ''}
                             form={register('rol', optionsLabelErrors.optRol)}

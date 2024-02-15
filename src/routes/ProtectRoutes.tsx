@@ -9,6 +9,7 @@ import {CustomSpinner} from '../common/atoms/CustomSpinner.tsx';
 import {listMenuAdmin} from '../utils/menu/MemuAdmin.tsx';
 import {LayoutPrivate} from '../containers/LayoutPrivate/LayoutPrivate.tsx';
 import {listMenuUser} from '../utils/menu/MenuUser.tsx';
+import {listMenuSecurity} from '../utils/menu/MenuSegurity.tsx';
 
 interface Interface {
     token: string
@@ -31,7 +32,6 @@ const ProtectRoutes = () => {
         if (user && socket){
             socket.emit('subscribe', user.rol);
         }
-
     }, [dispatch, user]);
 
     const token:Interface = getAccessToken('token');
@@ -39,8 +39,15 @@ const ProtectRoutes = () => {
         return <Navigate to={routesPublics.LOGIN} />;
     }
 
+    // return (
+    //     <LayoutPrivate list={user?.rol === 'Administrador' ? listMenuAdmin : listMenuUser}>
+    //         {
+    //             loading ? <CustomSpinner /> : <Outlet />
+    //         }
+    //     </LayoutPrivate>
+    // );
     return (
-        <LayoutPrivate list={user?.rol === 'Administrador' ? listMenuAdmin : listMenuUser}>
+        <LayoutPrivate list={user?.rol === 'Administrador' ? listMenuAdmin : user?.rol === 'Usuario' ? listMenuUser: listMenuSecurity}>
             {
                 loading ? <CustomSpinner /> : <Outlet />
             }
