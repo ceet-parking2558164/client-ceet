@@ -12,7 +12,7 @@ const ListRequest = () => {
 
     useEffect(() => {
         dispatch(getAllRequestsThunk());
-    }, []);
+    }, [dispatch]);
 
     return (
         <>
