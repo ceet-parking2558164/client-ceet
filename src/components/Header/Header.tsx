@@ -24,7 +24,7 @@ const Header = () => {
         socket?.on('notify', (num) => {
             setMsgIsRead(num);
         });
-    }, [socket]);
+    }, []);
 
     return (
         <header style={styleHeader.header}>
@@ -78,5 +78,4 @@ const Header = () => {
         </header>
     );
 };
-
 export {Header};

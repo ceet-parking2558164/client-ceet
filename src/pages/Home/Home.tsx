@@ -1,10 +1,11 @@
-import {Box, Container} from '@mui/material';
-import {ContactUs} from '../../components/ContactUs/ContactUs.tsx';
+import { Box, Container } from '@mui/material';
+import { ContactUs } from '../../components/ContactUs/ContactUs.tsx';
+import './styles.css';
 
 const Home = () => {
     return (
         <Box>
-            <Container sx={{pt: 10, textAlign: 'center'}}>
+            <Container sx={{ pt: 10, textAlign: 'center' }}>
                 <video
 
                     width="900" height="500" controls autoPlay

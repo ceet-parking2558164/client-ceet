@@ -13,7 +13,7 @@ interface HeaderStyles {
 
 interface Header {
     header: CSSProperties,
-    image: CSSProperties
+    image: CSSProperties 
 }
 const styleGlobal:HeaderStyles = {
     boxImage: {
