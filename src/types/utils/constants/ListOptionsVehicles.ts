@@ -1,6 +1,10 @@
 interface ListOptionsVehicles {
-    id: string,
-    type: string
+    typeVehicle_id: string,
+    nameType: string
 }
 
-export type {ListOptionsVehicles};
+interface InitialStateTypeVehicles {
+    typesVehicles: ListOptionsVehicles[]
+}
+
+export type {ListOptionsVehicles, InitialStateTypeVehicles};

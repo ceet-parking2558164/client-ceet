@@ -32,7 +32,7 @@ const useActionVehicle = (idType:ListOptionsVehicles|undefined, reset:UseFormRes
 
     const handleSendForm = async (data:FieldValues) => {
         const formData = new FormData();
-        if (idType?.type === 'Bicicleta'){
+        if (idType?.nameType === 'Bicicleta'){
             formData.append('typeBicycle', data.typeBicycle);
             formData.append('serial', data.serial);
         }else {
@@ -41,7 +41,7 @@ const useActionVehicle = (idType:ListOptionsVehicles|undefined, reset:UseFormRes
             formData.append('cylinderCapacity', data.cylinderCapacity);
         }
         if (idType && user?.user_id){
-            formData.append('typeVehicle_id', idType.id);
+            formData.append('typeVehicle_id', idType.typeVehicle_id);
             formData.append('user_id', user.user_id);
         }
         formData.append('color', data.color);

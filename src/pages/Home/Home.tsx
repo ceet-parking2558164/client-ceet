@@ -1,6 +1,5 @@
 import { Box, Container } from '@mui/material';
 import { ContactUs } from '../../components/ContactUs/ContactUs.tsx';
-import './styles.css';
 
 const Home = () => {
     return (

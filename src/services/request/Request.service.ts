@@ -27,7 +27,6 @@ class RequestService {
     }
     async getDetailRequestUser(userId:string){
         const token = this.tokenAccess;
-        console.log(token);
         return await parkingApi.get(`request/pending/${userId}`, {
             headers: {
                 Authorization: `Bearer ${token.token}`,

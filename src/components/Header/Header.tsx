@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {MouseEvent, useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {Avatar, Badge, Box, Hidden, Typography} from '@mui/material';
@@ -10,6 +11,7 @@ import logoSena from '../../assets/logo_sena.png';
 import {useAppSelector} from '../../hooks/useRedux/useAppRedux.ts';
 import {MenuHeader} from '../../common/molecules/MenuHeader/MenuHeader.tsx';
 import {socket} from '../../utils/socket/socket.ts';
+import { getMessagesIsRead } from '../../redux/actions/message/MessageThunk.ts';
 
 const Header = () => {
 
@@ -19,12 +21,17 @@ const Header = () => {
     const handleMenu = (e: MouseEvent<HTMLElement>) => {
         setAnchorMenu(e.currentTarget);
     };
+    useEffect(() => {
+        getMessagesIsRead().then(({msgIsRead}: { msgIsRead:number}) => {
+            setMsgIsRead(msgIsRead);
+        });
+    }, [msgIsRead]);
 
     useEffect(() => {
         socket?.on('notify', (num) => {
             setMsgIsRead(num);
         });
-    }, []);
+    }, [socket]);
 
     return (
         <header style={styleHeader.header}>

@@ -5,6 +5,7 @@ import {messageSlice} from '../reducer/message.slice.ts';
 import {chatSlice} from '../reducer/chat.slice.ts';
 import {requestSlice} from '../reducer/requests.slice.ts';
 import {vehicleSlice} from '../reducer/vehicle.slice.ts';
+import { typeVehicleSlice } from '../reducer/typeVehicle.slice.ts';
 
 const store = configureStore({
     reducer: {
@@ -13,7 +14,8 @@ const store = configureStore({
         chats: chatSlice.reducer,
         messages: messageSlice.reducer,
         requests: requestSlice.reducer,
-        vehicles: vehicleSlice.reducer
+        vehicles: vehicleSlice.reducer,
+        typeVehicles: typeVehicleSlice.reducer
     },
 
 });

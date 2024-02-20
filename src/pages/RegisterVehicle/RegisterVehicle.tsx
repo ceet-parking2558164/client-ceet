@@ -1,19 +1,23 @@
-import {ChangeEvent} from 'react';
+import {ChangeEvent, useEffect} from 'react';
 import {Box, Container, Typography} from '@mui/material';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
 import {CardImageVehicle} from '../../components/CardImageVehicle/CardImageVehicle.tsx';
 import {useFormRegister} from '../../hooks/useFormRegister/useFormRegister.ts';
 import { CustomSelect } from '../../common/atoms/CustomSelect.tsx';
 import {useActionVehicle} from '../../hooks/useVehicle/useActionVehicle.ts';
-import {optionsVehicles} from '../../utils/constants/listOptionsVehicles.ts';
+/* import {optionsVehicles} from '../../utils/constants/listOptionsVehicles.ts'; */
 import {validateFormVehicle, optionErrorsForm} from './validateForm.ts';
 import {ModalError} from '../../components/ModalError/ModalError.tsx';
 import {ListOptionsVehicles} from '../../types/utils/constants/ListOptionsVehicles.ts';
 import {styleSx} from './RegisterVehicle.styles.ts';
 import {LoadingButton} from '@mui/lab';
+import { useAppDispatch, useAppSelector } from '../../hooks/useRedux/useAppRedux.ts';
+import { getAllTypesVehiclesThunk } from '../../redux/actions/typtVehicle/typeVehicle.thunk.ts';
 
 const RegisterVehicle = () => {
 
+    const dispatch = useAppDispatch();
+    const {typesVehicles} = useAppSelector(state => state.typeVehicles);
 
     const {
         register,
@@ -30,10 +34,14 @@ const RegisterVehicle = () => {
     let idTypeVehicle:ListOptionsVehicles|undefined;
 
     if (typeVehicle_id){
-        idTypeVehicle = optionsVehicles.find(type => type.type === typeVehicle_id);
+        idTypeVehicle = typesVehicles.find(type => type.nameType === typeVehicle_id);
     }
 
     const {selectImage, handleSendForm, handleFile, loading} = useActionVehicle(idTypeVehicle, reset);
+
+    useEffect(() => {
+        dispatch(getAllTypesVehiclesThunk());
+    },[dispatch]);
 
     return (
        <>
@@ -43,7 +51,7 @@ const RegisterVehicle = () => {
                    <CustomSelect
                        label='Tipo de vehiculo'
                        value={typeVehicle_id ? typeVehicle_id: ''}
-                       options={[optionsVehicles[0].type, optionsVehicles[1].type, optionsVehicles[2].type]}
+                       options={typesVehicles.map(tv => tv.nameType)}
                        form={register('typeVehicle_id')}
                    />
                    <Box sx={styleSx.boxDynamic}>

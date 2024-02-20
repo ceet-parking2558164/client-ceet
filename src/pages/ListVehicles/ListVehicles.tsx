@@ -13,7 +13,7 @@ const ListVehicles = () => {
 
     useEffect(() => {
         dispatch(getAllVehiclesThunk());
-    }, []);
+    }, [dispatch]);
 
     const handleDeleteVehicle = async(idVehicle:string) => {
         await deleteVehicleThunk(idVehicle);

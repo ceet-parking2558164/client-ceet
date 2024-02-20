@@ -20,7 +20,7 @@ const QrImage = () => {
 
             }
         })();
-    }, []);
+    }, [user?.user_id]);
 
     const handleDownload = () => {
         if (imageQr) {
