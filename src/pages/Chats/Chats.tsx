@@ -6,12 +6,16 @@ import {CardChat} from '../../components/CardChat/CardChat.tsx';
 import {useAppDispatch, useAppSelector} from '../../hooks/useRedux/useAppRedux.ts';
 import {getAllChatThunk} from '../../redux/actions/chat/chatThunk.ts';
 import {FormSendMessage} from '../../components/FormSendMessage/FormSendMessage.tsx';
+import { Chats as Chat } from '../../types/redux/initialStateChat.ts';
+import { socket } from '../../utils/socket/socket.ts';
 
 const Chats = () => {
 
     const dispatch = useAppDispatch();
 
     const {chats} = useAppSelector(state => state.chats);
+
+    const [chat, setChats] = useState<Chat[]>([]);
 
     const {user} = useAppSelector(state => state.auth);
 
@@ -23,6 +27,15 @@ const Chats = () => {
     useEffect(() => {
         dispatch(getAllChatThunk());
     }, [dispatch]);
+
+    useEffect(() => {
+        socket?.on('chat', (data) => {
+            //console.log(data);
+            setChats(data);
+        });
+    }, []);
+
+    const chatsCopy = [...chat, ...chats];
 
     return (
         <Container>
@@ -40,10 +53,10 @@ const Chats = () => {
                 </Box>
                 <CustomTabPanel value={value} index={0}>
                     {
-                        chats.map(chat => (
+                        chatsCopy?.map(chat => (
                             <div key={chat.chat_id} style={{width: '100%', border: 1, backgroundColor: 'rgba(239,239,239,0.85)'}}>
                                 {
-                                    user?.rol === 'Administrador' && (
+                                    user?.rol === 'Administrador' && user?.user_id === chat.admin_id && (
                                         <CardChat
                                             userId={chat.userId}
                                             chat_id={chat.chat_id}
@@ -56,7 +69,21 @@ const Chats = () => {
                     }
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={1}>
-                    hola 2
+                    {
+                        chatsCopy.map(chat => (
+                            <div key={chat.chat_id} style={{ width: '100%', border: 1, backgroundColor: 'rgba(239,239,239,0.85)' }}>
+                                {
+                                    user?.user_id === chat.user_id && (
+                                        <CardChat
+                                            userId={chat.userId}
+                                            chat_id={chat.chat_id}
+                                            createdAt={chat.createdAt}
+                                        />
+                                    )
+                                }
+                            </div>
+                        ))
+                    }
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={2}>
                     <FormSendMessage />

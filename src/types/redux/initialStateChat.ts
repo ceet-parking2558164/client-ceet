@@ -7,6 +7,7 @@ interface InitialStateChat {
 
 interface Chats {
     chat_id: string
+    admin_id?: string
     user_id?: string,
     status_chat?: boolean,
     createdAt: string,

@@ -18,6 +18,9 @@ const Message = () => {
     const dispatch = useAppDispatch();
 
     const {messages} = useAppSelector(state => state.messages);
+    const {user} = useAppSelector(state => state.auth);
+    
+    
     useEffect(() => {
         (async () =>{
             if (chatId){
@@ -50,8 +53,8 @@ const Message = () => {
                         <Box sx={{display: 'flex', justifyContent: 'space-between',width: '100%', alignItems: 'center'}}>
                             <Typography>{msg.message}</Typography>
                             {
-                                msg.type === 'Registro' && (
-                                    <Link to={`${routesGlobals.ROOT}/admin${routesAdmin.REQUEST}/${msg.user_id}`}>
+                                msg.type === 'Registro' && user?.rol === 'Administrador'  && (
+                                    <Link to={`${routesGlobals.ROOT}/admin${routesAdmin.REQUEST}/${msg?.Chat.user_id}`}>
                                         <CustomButton textValue='Ver solicitud' />
                                     </Link>
                                 )

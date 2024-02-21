@@ -24,6 +24,8 @@ class MessageService {
         });
     }
     async updateMessage(chatId:string){
+        console.log(chatId);
+        
         const token = getAccessToken('token');
         return await parkingApi.put(`/message/read/${chatId}`, {}, {
             headers: {

@@ -42,7 +42,7 @@ const NavBarUser:FC<NavBar> = ({listOpc, nameBar}) => {
                         labelId="select-label"
                         id="demo-simple-select"
                         value={rol}
-                        label={rol}
+                        label='Usuarios'
                         onChange={handleSelectChange}
                     >
                         <MenuItem disabled value="">

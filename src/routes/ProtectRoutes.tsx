@@ -30,7 +30,7 @@ const ProtectRoutes = () => {
     }, []);
     useEffect(() => {
         if (user && socket){
-            socket.emit('subscribe', user.rol);
+            socket.emit('subscribe', user?.user_id);
         }
     }, [dispatch, user]);
 
@@ -39,13 +39,6 @@ const ProtectRoutes = () => {
         return <Navigate to={routesPublics.LOGIN} />;
     }
 
-    // return (
-    //     <LayoutPrivate list={user?.rol === 'Administrador' ? listMenuAdmin : listMenuUser}>
-    //         {
-    //             loading ? <CustomSpinner /> : <Outlet />
-    //         }
-    //     </LayoutPrivate>
-    // );
     return (
         <LayoutPrivate list={user?.rol === 'Administrador' ? listMenuAdmin : user?.rol === 'Usuario' ? listMenuUser: listMenuSecurity}>
             {

@@ -25,7 +25,7 @@ const Users = () => {
 
     return (
         <>
-            <NavBarUser listOpc={['Usuario', 'Seguridad']} nameBar='Usuarios' />
+            <NavBarUser listOpc={['Usuario', 'Guarda de seguridad']} nameBar='Usuarios' />
             <TableContainer sx={{ maxHeight: 500 }}>
                 <Table>
                     <TableHead>

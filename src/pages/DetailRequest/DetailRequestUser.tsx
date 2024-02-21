@@ -13,7 +13,6 @@ const DetailRequestUser = () => {
 
     const {userId} = useParams();
 
-
     useEffect(() => {
         if (userId){
             dispatch(getRequestVehicleThunk(userId));
