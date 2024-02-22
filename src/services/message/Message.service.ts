@@ -1,3 +1,4 @@
+import { FieldValues } from 'react-hook-form';
 import {parkingApi} from '../../api/parkingApi.ts';
 import {getAccessToken} from '../../utils/auth/localStorage.ts';
 
@@ -24,8 +25,6 @@ class MessageService {
         });
     }
     async updateMessage(chatId:string){
-        console.log(chatId);
-        
         const token = getAccessToken('token');
         return await parkingApi.put(`/message/read/${chatId}`, {}, {
             headers: {
@@ -33,11 +32,13 @@ class MessageService {
             }
         });
     }
-    async totalMessages(){
-        return await parkingApi.get('message/total',{
-            headers: {
-                Authorization: `Bearer ${this.tokenAccess?.token}`
-            }
+
+    async sendMessage(dataMessage:FieldValues){
+        const token = getAccessToken('token');
+        return await parkingApi.post('/message/send', dataMessage, {
+          headers: {
+            Authorization: `Bearer ${token.token}`,
+          },
         });
     }
 }

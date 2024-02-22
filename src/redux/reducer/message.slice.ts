@@ -1,10 +1,10 @@
-import {createSlice} from '@reduxjs/toolkit';
-import {Message} from '../../types/pages/Message/Message.ts';
-import {getMessagesAction, totalMessagesAction} from '../actions/message/message.action.ts';
+import {PayloadAction, createSlice} from '@reduxjs/toolkit';
+import {InitialStateMessage, Message} from '../../types/pages/Message/Message.ts';
+import {getMessagesAction} from '../actions/message/message.action.ts';
 
-const initialState:Message = {
+const initialState:InitialStateMessage = {
     messages: [],
-    total: 0
+    usersInChat: null
 };
 
 const messageSlice = createSlice({
@@ -12,9 +12,11 @@ const messageSlice = createSlice({
    initialState,
    reducers:{
        getAllMessage: getMessagesAction,
-       totalMessages: totalMessagesAction
+       getAddMessage: (state:InitialStateMessage, action:PayloadAction<Message>) => {
+        state.messages = [...state.messages, action.payload];
+       }
    }
 });
 
-export const {getAllMessage, totalMessages} = messageSlice.actions;
+export const {getAllMessage, getAddMessage} = messageSlice.actions;
 export {messageSlice};

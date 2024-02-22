@@ -4,14 +4,14 @@ import {Link} from 'react-router-dom';
 import {Delete} from '@mui/icons-material';
 import {CustomItemIcon} from '../../common/atoms/CustomItemIcon.tsx';
 import {CustomInput} from '../../common/atoms/CustomInput.tsx';
-import {Chats} from '../../types/redux/initialStateChat.ts';
+import {ComponentListChat} from '../../types/redux/initialStateChat.ts';
 import {routesGlobals} from '../../utils/constants/routes.ts';
 import {deleteChatThunk} from '../../redux/actions/chat/chatThunk.ts';
 import {useAppDispatch} from '../../hooks/useRedux/useAppRedux.ts';
 
 
-const CardChat:FC<Chats> = (props) => {
-
+const CardChat:FC<ComponentListChat> = (props) => {
+    
     const dispatch = useAppDispatch();
 
     const hadnleDeleteChat = (id:string) => {
@@ -25,12 +25,12 @@ const CardChat:FC<Chats> = (props) => {
                 style={{textDecoration: 'none', color: 'black'}}
             >
                 <Box sx={{width: 130, display: 'flex', justifyContent: 'center'}}>
-                    <Avatar sx={{width: 76, height: 76}} src={props.userId.imageProfile ? props.userId.imageProfile: ''}/>
+                    <Avatar sx={{width: 76, height: 76}} src={props.imageProfile ? props.imageProfile: ''}/>
                 </Box>
             </Link>
             <Box sx={{width: '100%', px: 2}}>
                 <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
-                    <Typography>{`${props.userId.firstName} ${props.userId.lastName}`}</Typography>
+                    <Typography>{`${props.firstName} ${props.lastName}`}</Typography>
                     <Typography>{props.createdAt.slice(15, 19)}</Typography>
                 </Box>
                 <Box sx={{display: 'flex', justifyContent: 'space-between', my: 2}}>

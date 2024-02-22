@@ -1,7 +1,6 @@
 import {MessageService} from '../../../services/message/Message.service.ts';
 import {AppDispatch} from '../../store/typeState.ts';
 import {getAllMessage} from '../../reducer/message.slice.ts';
-import {totalMessages} from '../../reducer/message.slice.ts';
 
 
 const messageMessage = new MessageService();
@@ -28,17 +27,6 @@ const getMessagesIsRead = async() => {
     }
 };
 
-const getTotalMessagesThunk = () => {
-    return async function (dispatch:AppDispatch){
-        try {
-            const response  = await messageMessage.totalMessages();
-            if (response.status){
-                dispatch(totalMessages(response.data));
-            }
-        }catch (e) {
-            console.error(e);
-        }
-    };
-};
 
-export {getMessagesThunk, getTotalMessagesThunk, getMessagesIsRead};
+
+export {getMessagesThunk, getMessagesIsRead};

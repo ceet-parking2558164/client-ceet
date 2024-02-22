@@ -11,6 +11,8 @@ import {ProfileUser} from '../pages/Profile/ProfileUser.tsx';
 import {Chats} from '../pages/Chats/Chats.tsx';
 import {Message} from '../pages/Message/Message.tsx';
 import {ProtectRoutesSecurity} from './ProtectRoutesSecurity.tsx';
+import { LayoutChat } from '../containers/LayoutChat/LayoutChat.tsx';
+import { ProtectRoutesWrapper } from './ProtectRoutesWrapper.tsx';
 
 function App() {
     return (
@@ -18,11 +20,13 @@ function App() {
             <Header/>
             <RoutesNotFound>
                 <Route path='/*' element={<RoutesPublic/>}/>
-                <Route path={routesGlobals.ROOT} element={<ProtectRoutes/>}>
-                    <Route index element={<Welcome />} />
+                <Route path={routesGlobals.ROOT} element={<ProtectRoutesWrapper/>}>
+                    <Route index element={<Welcome />} /> 
                     <Route path={routesGlobals.PROFILE} element={<ProfileUser />} />
-                    <Route path={routesGlobals.CHAT} element={<Chats/>}/>
-                    <Route path={`${routesGlobals.MESSAGE}/:chatId`} element={<Message />} />
+                    <Route element={<LayoutChat />}>
+                        <Route path={routesGlobals.CHAT} element={<Chats />} />
+                        <Route path={`${routesGlobals.MESSAGE}/:chatId`} element={<Message />} />
+                    </Route>
                     <Route path={`${routesGlobals.ROOT}/user/*`} element={<ProtectRoutesUsers/>}/>
                     <Route path={`${routesGlobals.ROOT}/admin/*`} element={<ProtectRoutesAdmin/>}/>
                     <Route path={`${routesGlobals.ROOT}/security/*`} element={<ProtectRoutesSecurity />} />
@@ -32,12 +36,4 @@ function App() {
     );
 }
 
-
-
 export default App;
-
-
-
-
-
-

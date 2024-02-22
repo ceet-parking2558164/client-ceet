@@ -3,15 +3,12 @@ import {Box, Container, Tab, Tabs, Typography} from '@mui/material';
 import {Mail} from '@mui/icons-material';
 import {CustomTabPanel} from '../../common/molecules/CustomTabPanel/CustomTabPanel.tsx';
 import {CardChat} from '../../components/CardChat/CardChat.tsx';
-import {useAppDispatch, useAppSelector} from '../../hooks/useRedux/useAppRedux.ts';
-import {getAllChatThunk} from '../../redux/actions/chat/chatThunk.ts';
+import {useAppSelector} from '../../hooks/useRedux/useAppRedux.ts';
 import {FormSendMessage} from '../../components/FormSendMessage/FormSendMessage.tsx';
 import { Chats as Chat } from '../../types/redux/initialStateChat.ts';
 import { socket } from '../../utils/socket/socket.ts';
 
 const Chats = () => {
-
-    const dispatch = useAppDispatch();
 
     const {chats} = useAppSelector(state => state.chats);
 
@@ -25,12 +22,7 @@ const Chats = () => {
     };
 
     useEffect(() => {
-        dispatch(getAllChatThunk());
-    }, [dispatch]);
-
-    useEffect(() => {
         socket?.on('chat', (data) => {
-            //console.log(data);
             setChats(data);
         });
     }, []);
@@ -58,7 +50,10 @@ const Chats = () => {
                                 {
                                     user?.rol === 'Administrador' && user?.user_id === chat.admin_id && (
                                         <CardChat
-                                            userId={chat.userId}
+                                            firstName={chat.userId.firstName}
+                                            lastName={chat.userId.lastName}
+                                            imageProfile={chat.userId.imageProfile}
+                                            key={chat.chat_id}
                                             chat_id={chat.chat_id}
                                             createdAt={chat.createdAt}
                                         />
@@ -75,7 +70,10 @@ const Chats = () => {
                                 {
                                     user?.user_id === chat.user_id && (
                                         <CardChat
-                                            userId={chat.userId}
+                                            firstName={chat.adminId.firstName}
+                                            lastName={chat.adminId.lastName}
+                                            imageProfile={chat.userId.imageProfile}
+                                            key={chat.chat_id}
                                             chat_id={chat.chat_id}
                                             createdAt={chat.createdAt}
                                         />

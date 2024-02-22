@@ -1,33 +1,33 @@
 interface User {
     firstName: string
-    lastNAme: string
+    lastName: string
     imageProfile: string
+    user_id: string
 }
 interface Chat {
-    user_id: string,
-    admin_id: string
-}
-
-type MessageUser = {
-    User: User
-    chat_id?: string
-    createdAt: string
-    message: string,
-    is_read: boolean
-    message_id?: string
-    type:string
-    updatedAt?: string
-    user_id?: string
-    Chat: Chat
-}
-interface TotalMessages {
-    total: number
+  admin_id: string;
+  userId: User;
+  adminId: User;
 }
 interface Message {
-    messages: MessageUser[]
-    total: number
+  message_id?: string
+  message: string;
+  type: string;
+  chat_id?: string;
+  user_id?: string;
+  is_read?: string;
+  createdAt: string;
+  updatedAt?: string;
+}
+
+
+interface InitialStateMessage {
+  messages: Message[];
+  usersInChat: Chat|null
 }
 
 
 
-export type {Message, MessageUser, TotalMessages};
+
+
+export type {Message, InitialStateMessage};
