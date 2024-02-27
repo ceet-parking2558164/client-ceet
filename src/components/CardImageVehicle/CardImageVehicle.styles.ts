@@ -9,9 +9,10 @@ interface CardImage {
 const styleSx:CardImage = {
     boxImage: {
         width: '100%',
-        height: '140px',
+        height: '300px',
         border: 1, mt: 2,
-        borderRadius: '10px'
+        borderRadius: '10px',
+
     },
     button: {
         width: '100%',

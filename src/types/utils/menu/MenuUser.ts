@@ -8,6 +8,7 @@ interface MenuUser {
 }
 
 interface ListUser {
+    anchor?:string
     list: MenuUser[]
 }
 

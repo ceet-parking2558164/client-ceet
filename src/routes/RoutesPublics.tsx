@@ -1,11 +1,11 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
 import {LayoutPublic} from '../containers/LayoutPublic/LayoutPublic.tsx';
-import {Navigate, Route, Routes} from 'react-router-dom';
 import {routesPublics} from '../utils/constants/routes.ts';
-import {Home} from '../pages/Home/Home.tsx';
-import {LoginForm} from '../pages/Login/LoginForm.tsx';
-import {RecoveryPassword} from '../pages/RecoveryPassword/RecoveryPassword.tsx';
+import {Home} from '../pages/public/Home/Home.tsx';
+import {LoginForm} from '../pages/public/Login/LoginForm.tsx';
+import { RecoveryPassword } from '../pages/public/RecoveryPassword/RecoveryPassword.tsx';
 import {getAccessToken} from '../utils/auth/localStorage.ts';
-import {ResetPassword} from '../pages/ResetPassword/ResetPassword.tsx';
+import {ResetPassword} from '../pages/public/ResetPassword/ResetPassword.tsx';
 
 
 const RoutesPublic = () => {

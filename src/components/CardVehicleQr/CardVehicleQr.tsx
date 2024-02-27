@@ -14,7 +14,7 @@ interface Prueba {
 
 const CardVehicleQr: FC<Prueba> = ({ firstName, lastName, color, model, imageProfile, carPlate }) => {
     return (
-        <Box sx={{ width: '25%', height: '25%', p: 2, boxShadow: '0px 4px 10px', borderRadius: 5 }}>
+        <Box sx={{ minWidth: '80%', minHeight: '25%', p: 2, boxShadow: '0px 4px 10px', borderRadius: 5, position: 'absolute', top: 150, backgroundColor: '#efefef' }}>
             <Box sx={{ display: 'flex', width: '100%', height: '80%', justifyContent: 'space-between' }}>
                 <Box sx={{ widows: '50%', height: '50%', display: 'flex', flexDirection: 'column' }}>
                     <Avatar src={imageProfile} sizes='large' alt="img-profile" sx={{ width: 100, height: 100, mb: 1 }} />

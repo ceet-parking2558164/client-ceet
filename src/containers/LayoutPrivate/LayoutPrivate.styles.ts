@@ -1,5 +1,4 @@
 import {SxProps} from '@mui/material';
-import {theme} from '../../theme/theme.ts';
 
 interface SxPropsStyles {
     container: SxProps
@@ -15,10 +14,9 @@ const StylesSx:SxPropsStyles = {
     },
     containerPage: {
         flex: 1,
-        bgcolor: theme.palette.primary.light,
-        p: 10,
+        p: 2,
         maxHeight: 'calc(100vh - 64px)',
-        overflowY: 'auto'
+        overflowY: 'auto',
     }
 };
 

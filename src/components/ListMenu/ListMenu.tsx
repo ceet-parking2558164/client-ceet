@@ -6,11 +6,14 @@ import {NavLink} from 'react-router-dom';
 import {CustomItemIcon} from '../../common/atoms/CustomItemIcon.tsx';
 import {routesGlobals} from '../../utils/constants/routes.ts';
 import {styleNavLink} from './ListMenu.styles.ts';
+import { useActionHeader } from '../../hooks/useHeader/useActionHeader.ts';
 
 const ListMenu: FC<ListUser> = ({list}) => {
 
+    const {toggleDrawer} = useActionHeader();
+
     return (
-        <Box sx={{width: '100%', pt: 10}}>
+        <Box sx={{ width: '100%', pt: 10 }} onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
             <List>
                 <ListItem sx={{mt: 2, mb: 2}}>
                     <NavLink to={`${routesGlobals.ROOT}/`} style={({isActive}) => styleNavLink(isActive)}>

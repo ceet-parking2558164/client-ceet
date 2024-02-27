@@ -10,9 +10,9 @@ const LayoutChat = () => {
 
     useEffect(() => {
         dispatch(getAllChatThunk());
-    },[dispatch]);
+    }, [dispatch]);
 
-    return (
+    return(
         <>
             <Outlet />
         </>

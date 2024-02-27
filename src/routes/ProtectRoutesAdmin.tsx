@@ -1,13 +1,13 @@
 import {Route, Routes} from 'react-router-dom';
-import {NotFound} from '../pages/NotFound/NotFound.tsx';
-import {RegisterUser} from '../pages/RegisterUser/RegisterUser.tsx';
+import {NotFound} from '../pages/global/NotFound/NotFound.tsx';
+import { RegisterUser } from '../pages/admin/RegisterUser/RegisterUser.tsx';
 import {useAppSelector} from '../hooks/useRedux/useAppRedux.ts';
 import {routesAdmin} from '../utils/constants/routes.ts';
-import {DashBoard} from '../pages/DashBoard/DashBoard.tsx';
-import {Users} from '../pages/Users/Users.tsx';
-import {DetailRequestUser} from '../pages/DetailRequest/DetailRequestUser.tsx';
-import {ListVehicles} from '../pages/ListVehicles/ListVehicles.tsx';
-import {ListRequest} from '../pages/ListRequest/ListRequest.tsx';
+import { DashBoard } from '../pages/admin/DashBoard/DashBoard.tsx';
+import {Users} from '../pages/admin/Users/Users.tsx';
+import { DetailRequestUser } from '../pages/admin/DetailRequest/DetailRequestUser.tsx';
+import { ListVehicles } from '../pages/admin/ListVehicles/ListVehicles.tsx';
+import { ListRequest } from '../pages/admin/ListRequest/ListRequest.tsx';
 
 
 const ProtectRoutesAdmin = () => {

@@ -12,11 +12,11 @@ const messageSlice = createSlice({
    initialState,
    reducers:{
        getAllMessage: getMessagesAction,
-       getAddMessage: (state:InitialStateMessage, action:PayloadAction<Message>) => {
+       addMessage: (state:InitialStateMessage, action:PayloadAction<Message>) => {
         state.messages = [...state.messages, action.payload];
        }
    }
 });
 
-export const {getAllMessage, getAddMessage} = messageSlice.actions;
+export const {getAllMessage, addMessage} = messageSlice.actions;
 export {messageSlice};

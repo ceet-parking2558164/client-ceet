@@ -1,7 +1,7 @@
 import {Route, Routes } from 'react-router-dom';
 import {useAppSelector} from '../hooks/useRedux/useAppRedux.ts';
-import { NotFound } from '../pages/NotFound/NotFound.tsx';
-import {QrScanner} from '../pages/QrScanner/QrScanner.tsx';
+import { NotFound } from '../pages/global/NotFound/NotFound.tsx';
+import {QrScanner} from '../pages/securityGuard/QrScanner/QrScanner.tsx';
 
 const ProtectRoutesSecurity = () => {
 

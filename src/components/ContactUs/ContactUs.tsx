@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import {stylesLink} from '../../styles/links.styles.ts';
 const ContactUs = () => {
     return (
-        <Container sx={{py: 5}}>
+        <Container sx={{py: 5, width: '100%'}}>
             <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2}}>
                 <Typography variant='h2'>CONTACT US</Typography>
                 <Typography variant='body1' sx={{fontSize: 20, fontFamily: 'monospace'}}>
@@ -14,14 +14,14 @@ const ContactUs = () => {
                     y resolveremos cualquier inquietud. ¡Bienvenido al parqueadero SENA!
                 </Typography>
             </Box>
-            <Box sx={{display: 'flex', pt: 10}}>
-                <form style={{display: 'flex', flexDirection: 'column', gap: 10, width: '50%', padding:35, backgroundColor: '#ffffff', borderRadius: 15}}>
+            <Box sx={{ display: 'flex', pt: 10, flexDirection: { xs: 'column', sm: 'row'} }}>
+                <form style={{display: 'flex', flexDirection: 'column', gap: 10, width: '80%', padding:35, backgroundColor: '#ffffff', borderRadius: 15}}>
                     <CustomInput label='Nombre'/>
                     <CustomInput label='Correo electronico'/>
                     <CustomInput label='Mensaje' rows='4' multiline/>
                     <CustomButton textValue='Enviar' variant='contained'/>
                 </form>
-                <Box sx={{display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center', width: '50%'}}>
+                <Box sx={{display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center', width: '100%'}}>
                     <Typography variant='h4' sx={{fontWeight: 800}}>Siguenos</Typography>
                     <Box sx={{display: 'flex', gap: 5}}>
                         <Link to='/' style={stylesLink}>

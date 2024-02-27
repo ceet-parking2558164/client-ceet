@@ -1,7 +1,7 @@
 import {Route, Routes} from 'react-router-dom';
-import {NotFound} from '../pages/NotFound/NotFound.tsx';
-import {QrImage} from '../pages/QrImage/QrImage.tsx';
-import {RegisterVehicle} from '../pages/RegisterVehicle/RegisterVehicle.tsx';
+import {NotFound} from '../pages/global/NotFound/NotFound.tsx';
+import { QrImage } from '../pages/user/QrImage/QrImage.tsx';
+import { RegisterVehicle } from '../pages/user/RegisterVehicle/RegisterVehicle.tsx';
 import {useAppSelector} from '../hooks/useRedux/useAppRedux.ts';
 import {routesUser} from '../utils/constants/routes.ts';
 

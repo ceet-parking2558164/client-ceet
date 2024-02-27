@@ -8,6 +8,7 @@ import {LayoutPrivate} from '../containers/LayoutPrivate/LayoutPrivate.tsx';
 import {listMenuUser} from '../utils/menu/MenuUser.tsx';
 import {listMenuSecurity} from '../utils/menu/MenuSegurity.tsx';
 
+
 interface Interface {
     token: string
 }
