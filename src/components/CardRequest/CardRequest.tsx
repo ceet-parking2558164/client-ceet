@@ -1,8 +1,8 @@
-import { Box, Typography } from '@mui/material';
+import { Avatar, Box, Typography } from '@mui/material';
 import { CustomButton } from '../../common/atoms/CustomButton.tsx';
 import { FC } from 'react';
 import { CardRequest as CardRequestProps } from '../../types/components/CardRequest.ts';
-import logoSena from '../../assets/icono-sena.svg';
+
 const CardRequest: FC<CardRequestProps> = ({
   imgUser,
   status,
@@ -12,20 +12,20 @@ const CardRequest: FC<CardRequestProps> = ({
   return (
     <Box
       sx={{
-        width: '50%',
+        width: '45%',
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
         borderRadius: 3,
       }}
     >
       <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-between' }}>
-        <Box sx={{ width: '25%' }}>
-          <img
-            style={{ width: '100%', borderRadius: 10 }}
-            src={imgUser ? imgUser : logoSena}
+        <Box sx={{ width: '15%' }}>
+          <Avatar
+            sx={{ width: 150, height: 150 }}
+            src={imgUser ? imgUser : ''}
             alt="Imagen del solitante"
           />
         </Box>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           <Typography variant="h6">
             Solicitud No:
             <span style={{ fontWeight: 700 }}> {numberReq.slice(0, 7)}</span>

@@ -12,7 +12,7 @@ const DetailRequestUser = () => {
     const {detail_request} = useAppSelector(state => state.requests);
 
     const {userId} = useParams();
-
+    
     useEffect(() => {
         if (userId){
             dispatch(getRequestVehicleThunk(userId));
@@ -63,10 +63,10 @@ const DetailRequestUser = () => {
                                 </Box>
                             </Box>
 
-                            <ImageList>
+                            <ImageList sx={{display: {xs: 'flex',md: 'flex', lg: 'grid'}, flexDirection: {xs: 'column', md: 'column', lg: 'row'}}}>
                                 {
-                                    detail_request?.Vehicle?.images.map((img: string) => (
-                                        <ImageListItem sx={{ border: 2 }}>
+                                    detail_request?.Vehicle?.images.map((img:string, index:number) => (
+                                        <ImageListItem key={index} sx={{ border: 2 }}>
                                             <ImageZoom src={img} zoom="200" />
                                         </ImageListItem>
                                     ))
