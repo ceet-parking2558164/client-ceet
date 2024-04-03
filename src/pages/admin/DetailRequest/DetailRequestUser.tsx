@@ -50,7 +50,7 @@ const DetailRequestUser = () => {
                         </Box>
                         <Divider />
                         <Box sx={{ mt: 5 }}>
-                            <Typography variant='h4' sx={{ textAlign: 'center' }}>Datos del vehículo</Typography>
+                            <Typography variant='h4' sx={{ textAlign: 'center' }}>Datos del vehículos</Typography>
                             <Box sx={{ display: 'flex', py: 5, justifyContent: 'space-around' }}>
                                 <Box >
                                     <Typography sx={{ fontSize: 20 }}><strong>Marca:</strong> {detail_request?.Vehicle?.brand}</Typography>
