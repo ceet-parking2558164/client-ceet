@@ -6,7 +6,7 @@ import {registerVehicle} from '../../redux/actions/user/vehicle/thunk.ts';
 import {useAppSelector} from '../useRedux/useAppRedux.ts';
 import {ListOptionsVehicles} from '../../types/utils/constants/ListOptionsVehicles.ts';
 
-const useActionVehicle = (idType:ListOptionsVehicles|undefined, reset:UseFormReset<FieldValues>) => {
+const useActionVehicle = (idType:ListOptionsVehicles|undefined, _reset:UseFormReset<FieldValues>) => {
 
     const {user} = useAppSelector(state => state.auth);
 
